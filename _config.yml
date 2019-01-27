@@ -14,7 +14,7 @@ author:  # change following line to your infomation.
   name: Leandro Iannotti  # Be used at blog posts' author.
   first_name: Leandro  # Be used at index page about me section.
   last_name: Iannotti  # Be used at index page about me section.
-  avatar: /static/assets/img/landing/Perfil.jpeg  # upload your avatar at directory and edit it.
+  avatar: /static/assets/img/landing/Perfil.PNG  # upload your avatar at directory and edit it.
   github_username: leaiannotti  # Leave blank if you don't have now
   linkedin_id: leandro-iannotti # Leave blank if you don't have now
   facebook_username: lean.iannotti  # Leave blank if you don't have now
