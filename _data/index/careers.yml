@@ -18,8 +18,7 @@
     detail: Geosystems S.A
     i18n: company_b
   desc:
-    detail: Software development for different organisms in Argentina. A large part of the tasks involved the development of GIS systems. Development of Web and Desktop applications. Maintenance of Oracle databases. Development of Android applications.
-We made an application for the Cadastral sector, using different technologies such as C#, VB .NET, Oracle Database. Counting also with an interaction with Autocad and Mapguide
+    detail: Software development for different organisms in Argentina. A large part of the tasks involved the development of GIS systems. Development of Web and Desktop applications. Maintenance of Oracle databases. Development of Android applications.We made an application for the Cadastral sector, using different technologies such as C Sharp, VB .NET, Oracle Database. Counting also with an interaction with Autocad and Mapguide
     i18n: company_b_desc
   date:
     detail: Jan. 2012
@@ -33,8 +32,7 @@ We made an application for the Cadastral sector, using different technologies su
     detail: Infor
     i18n: company_b
   desc:
-    detail: Responsible for customizing products at a technical level. Working with software from the area of logistics and asset maintenance. Continuous communication with the client to discuss the proposals we offered. Close participation in the functional environment of the logistics area.Administration of databases SQL Server, programming of stored procedures and jobs for customizations.
-I was part of the production of logistics management systems for medical laboratories in Argentina. The tasks consisted of implementing interfaces of our product (Infor SCE WMS) to external systems (vehicle tracking, traceability, etc). Then we work on other implementations based on the previous one.
+    detail: Responsible for customizing products at a technical level. Working with software from the area of logistics and asset maintenance. Continuous communication with the client to discuss the proposals we offered. Close participation in the functional environment of the logistics area.Administration of databases SQL Server, programming of stored procedures and jobs for customizations.I was part of the production of logistics management systems for medical laboratories in Argentina. The tasks consisted of implementing interfaces of our product (Infor SCE WMS) to external systems (vehicle tracking, traceability, etc). Then we work on other implementations based on the previous one.
     i18n: company_b_desc
   date:
     detail: Dec. 2015
