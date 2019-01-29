@@ -1,0 +1,53 @@
+{
+  "website":{
+    "title": "Leandro Iannotti"
+  },
+  "nav":{
+    "home": "Inicio",
+    "about_me": "Sobre mi",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "career": "Carrera",
+    "blog": "Blog",
+    "link": "Link"
+  },
+  "about_me":{
+    "about_me": "Sobre mi",
+    "des": "Soy un desarrollador de software argentino con mas de 8 años de experiencia en el rubro. Me divierte resolver problemas de forma analitica y divertrime con lo que hago. Me gusta viajar, me hace feliz saber que no tengo que estar atado a ningun lado. Mis hobbies son la astronomia y el teatro."
+  },
+  "skills":{
+    "my_skills": "Mis habilidades"
+  },
+  "projects":{
+    "my_projects": "Mis proyectos",
+    "censo": "Proyecto realizado para la municipalidad de Berazategui para Android. Se encarga basicamente de censar parcelas y manzanas y corroborar la informacion con una base de datos.",
+    "bigdata": " Proyecto hecho para la universidad utilizando diferentes herramientas del entorno Apache Haddop."
+  },
+  "career":{
+    "my_career": "Mi carrera",
+    "southward": "Southward",
+    "southward_des": "Desarrollador junior.Utilizando lenguajes como Java PHP y JS. Databases en MySql.",
+    "southward_date": "Jun. 2011",
+    "southward_job": "Desarrollador Web Junior",
+    "geo": "Geosystems",
+    "geo_des": "Desarrollador de software para diferentes organismos en Argentina. Una gran parte de las tareas realizadas fue para el desarrollo de sistemas GIS. Desarrollador web y aplicaciones de windows.Mantenimiento de bases de datos Oracle. Desarrollos para aplicaciones Android .Realizamos diversos desarrollos para el sector catastral, usando variadas tecnologias como C Sharp, VB .NET, Oracle Database. Tambien Apis para interaccion con Autocad y Mapguide .",
+    "geo_date": "Ene. 2012",
+    "geo_job": "Dev Ops",
+    "infor": "Infor",
+    "infor_des": "Responsable de la customización de productos en el area tecnica. Trabajo con software del area de logistica y mantenimientos de activos. Comunicacion continua con el cliente para discutir las propuestas ofrecidas. Participacion en el trabajo funcional del area logistica. Administracion de bases de datos SQL Server, desarrollo de stored procedures,triggers y jobs para las customizaciones. Las principales tareas consistian en implementar interfaces entre nuestro producto (Infor SCE WMS) hacia sistemas externos (tracking vehicular, trazabilidad, etc). ",
+    "infor_date": "Dic. 2015",
+    "infor_job": "Consultor tecnico",
+    "facu": "Universidad de Buenos Aires - Licenciatura en Ciencias de la computacion",
+    "facu_des": "Estudiante de la carrera de Licenciatura en ciencias de la computacion.",
+    "facu_date": "Ago. 2018",
+    "facu_job": "Estudiante"
+  },
+  "blog":{
+    "my_blog": "My Blog"
+  },
+  "link":{
+    "link": "Link",
+    "view": "views"
+  }
+
+}
