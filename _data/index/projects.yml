@@ -2,14 +2,14 @@
 # If you don't have language feature(language.yml is empty), ignore "i18n" items
 # Suggest projects' img be located at '/static/assets/img/landing', and edit following img items.
 - name: Big Data
-  i18n: 
+  i18n: projects.bigdata
   gh_user: leaiannotti
   repo: eci_bigdata
   img: /static/assets/img/landing/BigDataPng.png
   desc: Project made for the university using different data control tools from Apache Hadoop
 
 - name: Censo
-  i18n: 
+  i18n: projects.censo
   gh_user: leaiannotti
   repo: Censo
   img: /static/assets/img/landing/AndroidPng.png
