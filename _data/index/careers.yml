@@ -2,57 +2,57 @@
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 - name:
     detail: Southward Solutions
-    i18n: southward
+    i18n: career.southward
   desc:
     detail: Junior developer, using languages such as Java, PHP and JS. Databases in MySql.
-    i18n: southward_desc
+    i18n: career.southward_desc
   date:
     detail: Jun. 2011
-    i18n: southward_date
+    i18n: career.southward_date
   job:
     detail: Junior Developer
-    i18n: southward_job
+    i18n: career.southward_job
   icon: fa-code
 
 - name:
     detail: Geosystems S.A
-    i18n: geo
+    i18n: career.geo
   desc:
     detail: Software development for different organisms in Argentina. A large part of the tasks involved the development of GIS systems. Development of Web and Desktop applications. Maintenance of Oracle databases. Development of Android applications.We made an application for the Cadastral sector, using different technologies such as C Sharp, VB .NET, Oracle Database. Counting also with an interaction with Autocad and Mapguide
-    i18n: geo_desc
+    i18n: career.geo_desc
   date:
     detail: Jan. 2012
-    i18n: geo_date
+    i18n: career.geo_date
   job:
     detail: Full Stack Developer
-    i18n: geo_job
+    i18n: career.geo_job
   icon: fa-map
 
 - name:
     detail: Infor
-    i18n: infor
+    i18n: career.infor
   desc:
     detail: Responsible for customizing products at a technical level. Working with software from the area of logistics and asset maintenance. Continuous communication with the client to discuss the proposals we offered. Close participation in the functional environment of the logistics area.Administration of databases SQL Server, programming of stored procedures and jobs for customizations.I was part of the production of logistics management systems for medical laboratories in Argentina. The tasks consisted of implementing interfaces of our product (Infor SCE WMS) to external systems (vehicle tracking, traceability, etc). Then we work on other implementations based on the previous one.
-    i18n: infor_desc
+    i18n: career.infor_desc
   date:
     detail: Dec. 2015
-    i18n: infor_date
+    i18n: career.infor_date
   job:
     detail: Technical Consultant
-    i18n: infor_job
+    i18n: career.infor_job
   icon: fa-code
 
 
 - name:
     detail: University of Buenos Aires - Bachellor in Computer Science .
-    i18n: facu
+    i18n: career.facu
   desc:
     detail: Student of the Computer Science carrer in the Univeristy of Buenos Aires
-    i18n: facu_desc
+    i18n: career.facu_desc
   date:
-    detail: Ago. 2018
-    i18n: facu_date
+    detail: Ago. 2011
+    i18n: career.facu_date
   job:
     detail: Student
-    i18n: facu_job
+    i18n: career.facu_job
   icon: fa-desktop
