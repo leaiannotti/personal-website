@@ -42,7 +42,7 @@
     i18n: career.infor_job
   icon: fa-pallet
 
-  - name:
+- name:
     detail: Sandfield
     i18n: career.sandfield
   desc:
