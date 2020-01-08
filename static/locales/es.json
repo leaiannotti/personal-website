@@ -37,6 +37,11 @@
     "infor_des": "Responsable de la customización de productos en el area tecnica. Trabajo con software del area de logistica y mantenimientos de activos. Comunicacion continua con el cliente para discutir las propuestas ofrecidas. Participacion en el trabajo funcional del area logistica. Administracion de bases de datos SQL Server, desarrollo de stored procedures,triggers y jobs para las customizaciones. Las principales tareas consistian en implementar interfaces entre nuestro producto (Infor SCE WMS) hacia sistemas externos (tracking vehicular, trazabilidad, etc). ",
     "infor_date": "Dic. 2015",
     "infor_job": "Consultor tecnico",
+    "sandfield": "Sandfield",
+    "sandfield_des": "Software developer, miembro del grupo de customer facing. Desarrollo de aplicaciones en to end para clientes de Mainfreight. Creacion de API's y automatizacion de test. ",
+    "sandfield_date": "Feb. 2018",
+    "sandfield_job": "Software developer",
+  
     "facu": "Universidad de Buenos Aires - Licenciatura en Ciencias de la computacion",
     "facu_des": "Estudiante de la carrera de Licenciatura en ciencias de la computacion.",
     "facu_date": "Ago. 2011",

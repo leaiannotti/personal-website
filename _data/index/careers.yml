@@ -40,6 +40,20 @@
   job:
     detail: Technical Consultant
     i18n: career.infor_job
+  icon: fa-pallet
+
+  - name:
+    detail: Sandfield
+    i18n: career.sandfield
+  desc:
+    detail: Software developer, belonging to the customer facing group. Development of applications in to end for clients. API creation and test automation.
+    i18n: career.sandfield_desc
+  date:
+    detail: Feb. 2018
+    i18n: career.sandfield_date
+  job:
+    detail: Technical Consultant
+    i18n: career.sandfield_job
   icon: fa-code
 
 
