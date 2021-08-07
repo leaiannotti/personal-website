@@ -13,4 +13,11 @@
   gh_user: leaiannotti
   repo: Censo
   img: /static/assets/img/landing/AndroidPng.png
-  desc: Project done for the municipality of Berazategui on Android. It is responsible for census the plots and corroborate the information of a database.
+  desc: Project aimed at gathering information about the land movement of a state.
+
+- name: Botflix
+  i18n: projects.botflix
+  gh_user: leaiannotti
+  repo: botTelegramMedia
+  img: /static/assets/img/landing/robotTv.png
+  desc: Telegram bot made in python in order to automate the download of movies and series. Works with different APIs such as Radarr, Sonarr, IMDB, TMDV and Plex

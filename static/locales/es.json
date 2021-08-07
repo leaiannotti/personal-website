@@ -21,7 +21,8 @@
   "projects":{
     "my_projects": "Mis proyectos",
     "censo": "Proyecto realizado para la municipalidad de Berazategui para Android. Se encarga basicamente de censar parcelas y manzanas y corroborar la informacion con una base de datos.",
-    "bigdata": " Proyecto hecho para la universidad utilizando diferentes herramientas del entorno Apache Haddop."
+    "bigdata": " Proyecto hecho para la universidad utilizando diferentes herramientas del entorno Apache Haddop.",
+    "botflix": " Bot de telegram hecho en python con el objectivo de poder automatizar la descarga de peliculas y series. Trabaja con diferentes API tales como Radarr, Sonarr, IMDB, TMDV y Plex"
   },
   "career":{
     "my_career": "Mi carrera",
