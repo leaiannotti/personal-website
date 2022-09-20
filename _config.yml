@@ -28,10 +28,12 @@ author:  # change following line to your infomation.
   skill_icon2:
     - name: fa-linux
     - name: fa-github
-  desc: Hi! My name is Leandro Iannotti, I am a systems engineer and full-stack developer.
+  desc: >
+      Hi! My name is Leandro Iannotti, I am a systems engineer and full-stack developer.
       I am passionate in Computer Sciences, logical and mathematical problems. Strong architectural, product design and leadership capabilities. 
       I maintain excellent communication with stakeholders and a proactive attitude.
-      Interested in big data management areas and in different frameworks that can facilitate the user experience. # Describe yourself.
+      Interested in big data management areas and in different frameworks that can facilitate the user experience. 
+  # Describe yourself.
 
 # comment
 disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.

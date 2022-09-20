@@ -4,10 +4,16 @@
     detail: Sandfield
     i18n: career.sandfield
   desc:
-    detail: Part of the customer facing team for the Mainfreight client. Design and development of RESTful APIs,mobile apps and websites for the biggest logistics company in New Zealand. Cross-platform Mobile AppsDevelopment using Cordova Framework.Developer and designer for Connect Enterprise, a Supply Chain management and tracking product used byone of the largest logistics companies in Australia, working mostly with .NET, Javascriot and MSSQLTechnical Leader for small sized teams (2-3 developers) working on individual systems.Designing and implementing interfaces to integrate with third-party software platforms and hardware
+    detail: > 
+      Part of the customer facing team. 
+      Design and development of RESTful APIs,mobile apps and websites for the biggest logistics company in New Zealand. 
+      Cross-platform Mobile AppsDevelopment using Cordova Framework.
+      Developer and designer for Connect Enterprise, a Supply Chain management and tracking product used byone of the largest logistics companies in Australia, working mostly with .NET, Javascript and MSSQL
+      Technical Leader for medium size teams (6-7 developers) working on individual systems.
+      Designing and implementing interfaces to integrate with third-party software platforms and hardware
     i18n: career.sandfield_desc
   date:
-    detail: Feb. 2018
+    detail: Feb. 2019
     i18n: career.sandfield_date
   job:
     detail: Senior Software Developer
@@ -18,7 +24,14 @@
     detail: Infor
     i18n: career.infor
   desc:
-    detail: Responsible for customizing products at a technical level. Working with software from the area of logistics and asset maintenance. Continuous communication with the client to discuss the proposals we offered. Close participation in the functional environment of the logistics area.Administration of databases SQL Server, programming of stored procedures and jobs for customizations.I was part of the production of logistics management systems for medical laboratories in Argentina. The tasks consisted of implementing interfaces of our product (Infor SCE WMS) to external systems (vehicle tracking, traceability, etc). Then we work on other implementations based on the previous one.
+    detail: > 
+      Responsible for customizing products at a technical level. 
+      Working with software from the area of logistics and asset maintenance. 
+      Continuous communication with the client to discuss the proposals we offered. 
+      Close participation in the functional environment of the logistics area. 
+      SQL server database administration, programming of stored procedures and jobs for customizations.
+      Part of the production of logistics management systems for medical laboratories in Argentina. 
+      Tasks consisted of implementing interfaces of our product (Infor SCE WMS) to external systems (vehicle tracking, traceability, etc), then we work on other implementations based on the previous one.
     i18n: career.infor_desc
   date:
     detail: Dec. 2015
@@ -32,7 +45,11 @@
     detail: Geosystems S.A
     i18n: career.geo
   desc:
-    detail: Software development for different organisms in Argentina. A large part of the tasks involved the development of GIS systems. Development of Web and Desktop applications. Maintenance of Oracle databases. Development of Android applications.We made an application for the Cadastral sector, using different technologies such as C Sharp, VB .NET, Oracle Database. Counting also with an interaction with Autocad and Mapguide
+    detail: >
+      Software development for different organisms in Argentina. 
+      A large part of the tasks involved the development of GIS systems. Development of Web and Desktop applications. Maintenance of Oracle databases. 
+      Android developer .We made an application for the Cadastral sector, using different technologies such as C Sharp, VB .NET, Oracle Database. 
+      Counting also with an interaction with Autocad and Mapguide
     i18n: career.geo_desc
   date:
     detail: Jan. 2012

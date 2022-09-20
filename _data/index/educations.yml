@@ -12,4 +12,4 @@
   job:
     detail: Student
     i18n: education.facu_job
-  icon: fa-desktop
+  icon: fa-book
