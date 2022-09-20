@@ -1,0 +1,15 @@
+# education section data
+# if you don't have language feature(language.yml is empty), ignore "i18n" items
+- name:
+    detail: University of Buenos Aires - Bachellor in Computer Science.
+    i18n: education.facu
+  desc:
+    detail: Student of the Computer Science carrer in the Univeristy of Buenos Aires
+    i18n: education.facu_desc
+  date:
+    detail: Ago. 2011
+    i18n: education.facu_date
+  job:
+    detail: Student
+    i18n: education.facu_job
+  icon: fa-desktop

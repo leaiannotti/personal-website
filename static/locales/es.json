@@ -8,6 +8,7 @@
     "skills": "Habilidades",
     "projects": "Proyectos",
     "career": "Carrera",
+    "education": "Educacion",
     "blog": "Blog",
     "link": "Link"
   },
@@ -24,8 +25,17 @@
     "bigdata": " Proyecto hecho para la universidad utilizando diferentes herramientas del entorno Apache Haddop.",
     "botflix": " Bot de telegram hecho en python con el objectivo de poder automatizar la descarga de peliculas y series. Trabaja con diferentes API tales como Radarr, Sonarr, IMDB, TMDV y Plex"
   },
+  "education":
+  {
+    "my_education": "Mi educacion",
+    "facu": "Universidad de Buenos Aires - Licenciatura en Ciencias de la computacion",
+    "facu_des": "Estudiante de la carrera de Licenciatura en ciencias de la computacion.",
+    "facu_date": "Ago. 2011",
+    "facu_job": "Estudiante"
+  },
   "career":{
     "my_career": "Mi carrera",
+    
     "southward": "Southward",
     "southward_des": "Desarrollador junior.Utilizando lenguajes como Java PHP y JS. Databases en MySql.",
     "southward_date": "Jun. 2011",
@@ -41,12 +51,7 @@
     "sandfield": "Sandfield",
     "sandfield_des": "Software developer, miembro del grupo de customer facing. Desarrollo de aplicaciones en to end para clientes de Mainfreight. Creacion de API's y automatizacion de test. ",
     "sandfield_date": "Feb. 2018",
-    "sandfield_job": "Software developer",
-  
-    "facu": "Universidad de Buenos Aires - Licenciatura en Ciencias de la computacion",
-    "facu_des": "Estudiante de la carrera de Licenciatura en ciencias de la computacion.",
-    "facu_date": "Ago. 2011",
-    "facu_job": "Estudiante"
+    "sandfield_job": "Software developer"
   },
   "blog":{
     "my_blog": "My Blog"

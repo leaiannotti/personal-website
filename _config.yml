@@ -14,7 +14,7 @@ author:  # change following line to your infomation.
   name: Leandro Iannotti  # Be used at blog posts' author.
   first_name: Leandro  # Be used at index page about me section.
   last_name: Iannotti  # Be used at index page about me section.
-  avatar: /static/assets/img/landing/Perfil.PNG  # upload your avatar at directory and edit it.
+  avatar: /static/assets/img/landing/Perfil2.jpg  # upload your avatar at directory and edit it.
   github_username: leaiannotti  # Leave blank if you don't have now
   linkedin_id: leandro-iannotti # Leave blank if you don't have now
   facebook_username: lean.iannotti  # Leave blank if you don't have now
@@ -27,10 +27,11 @@ author:  # change following line to your infomation.
     - name: fa-code
   skill_icon2:
     - name: fa-linux
-    - name: fa-android
-  desc: I am a .NET developer with a tendency to work with data. I love big data and solving problems through analysis.
-      During the last years I have worked as a programmer in different companies.
-      I'm crazy about astronomy and theater..  # Describe yourself.
+    - name: fa-github
+  desc: Hi! My name is Leandro Iannotti, I am a systems engineer and full-stack developer.
+      I am passionate in Computer Sciences, logical and mathematical problems. Strong architectural, product design and leadership capabilities. 
+      I maintain excellent communication with stakeholders and a proactive attitude.
+      Interested in big data management areas and in different frameworks that can facilitate the user experience. # Describe yourself.
 
 # comment
 disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
@@ -61,7 +62,7 @@ sass:
   style: compressed
 
 # Build settings
-encoding: utf-8
+encoding: UTF-8
 
 # other settings
 highlighter: rouge

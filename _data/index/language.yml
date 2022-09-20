@@ -7,3 +7,6 @@
 
  - locale: es
    flag: /static/assets/img/flags/Spain.png
+
+ - locale: en
+   flag: /static/assets/img/flags/United-Kingdom.png

@@ -1,54 +1,64 @@
 {
   "website":{
-    "title": "杰克的博客"
+    "title": "Leandro Iannotti"
   },
   "nav":{
-    "home": "首页",
-    "about_me": "关于我",
+    "home": "開始",
+    "about_me": "關於我",
     "skills": "技能",
-    "projects": "项目",
-    "career": "职业",
+    "projects": "原產地",
+    "career": "職業",
+    "education": "教育",
     "blog": "博客",
-    "link": "友情链接"
+    "link": "關聯"
   },
   "about_me":{
-    "about_me": "关于我",
-    "des": "我是一名全栈工程师，有开发网站，运维自动化，编写脚本的经验。人生是不断学习的过程，工作使我变的更严谨，旅行让我的生活更加多彩。通过编程和旅行我能结识到很多朋友。"
+    "about_me": "關於我",
+    "des": "我是一名阿根廷軟件開發人員，在該領域擁有超過 8 年的經驗。 以分析的方式解決問題並在工作中獲得樂趣讓我很開心。 我喜歡旅遊。 我的愛好是天文學和戲劇"
   },
   "skills":{
-    "my_skills": "我的技能"
+    "my_skills": "我的能力"
   },
   "projects":{
-    "my_projects": "我的项目",
-    "jalpc": "这是一个我自己的GitHub项目.",
-    "cpython": "这是一个别人的GitHub项目.",
-    "familycode": "这是另外一个项目."
+    "my_projects": "我的項目",
+    "censo": "為 Android 的 Berazategui 市製作的項目。 它主要負責登記包裹和區塊，並通過數據庫驗證信息。",
+    "bigdata": "使用 Apache Haddop 環境的不同工具為大學製作的項目。",
+    "botflix": "用 python 製作的 Telegram 機器人，旨在能夠自動下載電影和連續劇。 使用不同的 API，例如 Radarr、Sonarr、IMDB、TMDV 和 Plex"
+  },
+  "education":
+  {
+    "my_education": "我的教育",
+    "facu": "布宜諾斯艾利斯大學 - 計算機科學學士",
+    "facu_des": "計算機科學學士學位學生。",
+    "facu_date": "2011 年 8 月",
+    "facu_job": "學生"
   },
   "career":{
-    "my_career": "职业生涯",
-    "nextcode": "Nextcode",
-    "nextcode_des": "现在我在Nextcode，使用Python为基因分析项目做网站.",
-    "nextcode_date": "2016年4月",
-    "nextcode_job": "Python工程师",
-    "netease": "网易游戏",
-    "netease_des": "在网易游戏，我了解到游戏体系，并使用Python代码为自动化运维服务.",
-    "netease_date": "2015年6月",
-    "netease_job": "运维开发工程师",
-    "ucloud": "Ucloud",
-    "ucloud_des": "在Ucloud,我开始和服务器、操作系统打交道，并使用shell脚本管理海量服务器.",
-    "ucloud_date": "2013年9月",
-    "ucloud_job": "运维开发工程师",
-    "college": "毕业",
-    "college_des": "2013年7月大学毕业，开始了IT职业生涯",
-    "college_date": "2013年7月",
-    "college_job": "学生"
+    "my_career": "我的事業",
+    
+    "southward": "Southward",
+    "southward_des": "初級開發者。使用Java PHP、JS等語言。 MySql 中的數據庫。",
+    "southward_date": "2011 年 6 月",
+    "southward_job": "初級網絡開發人員",
+    "geo": "Geosystems",
+    "geo_des": "阿根廷不同組織的軟件開發人員。 執行的大部分任務是開發 GIS 系統。 Web 開發人員和 Windows 應用程序。Oracle 數據庫的維護。 Android 應用程序的開發我們使用 C Sharp、VB .NET、Oracle 數據庫等各種技術為地籍部門進行各種開發。 還有用於與 Autocad 和 Mapguide 交互的 API.",
+    "geo_date": "2012 年 1 月",
+    "geo_job": "開發運維",
+    "infor": "Infor",
+    "infor_des": "負責技術領域的產品定制。 使用物流和資產維護領域的軟件。 與客戶持續溝通，討論所提供的建議。 參與後勤區的職能工作。 管理 SQL Server 數據庫、開發存儲過程、觸發器和自定義作業。 主要任務包括實現我們的產品（Infor SCE WMS）與外部系統（車輛跟踪、可追溯性等）之間的接口。 ",
+    "infor_date": "2015 年 12 月",
+    "infor_job": "技術顧問",
+    "sandfield": "Sandfield",
+    "sandfield_des": "軟件開發人員，面向客戶組的成員。 面向 Mainfreight 客戶的端到端應用程序開發。 創建 API 和測試自動化。 ",
+    "sandfield_date": "2018 年 2 月",
+    "sandfield_job": "軟件開發人員"
   },
   "blog":{
     "my_blog": "我的博客"
   },
   "link":{
-    "link": "友情链接",
-    "view": "次访问"
+    "link": "關聯",
+    "view": "意見"
   }
 
 }
