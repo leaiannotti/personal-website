@@ -2,14 +2,14 @@
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 - name:
     detail: University of Buenos Aires - Bachellor in Computer Science.
-    i18n: education.facu
+    i18n: facu
   desc:
     detail: Student of the Computer Science carrer in the Univeristy of Buenos Aires
-    i18n: education.facu_desc
+    i18n: facu_desc
   date:
     detail: Ago. 2011
-    i18n: education.facu_date
+    i18n: facu_date
   job:
     detail: Student
-    i18n: education.facu_job
+    i18n: facu_job
   icon: fa-book

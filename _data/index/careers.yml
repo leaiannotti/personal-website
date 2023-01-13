@@ -2,27 +2,27 @@
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 - name:
     detail: Sandfield
-    i18n: career.sandfield
+    i18n: sandfield
   desc:
     detail: > 
       Part of the customer facing team. 
       Design and development of RESTful APIs,mobile apps and websites for the biggest logistics company in New Zealand. 
       Cross-platform Mobile AppsDevelopment using Cordova Framework.
-      Developer and designer for Connect Enterprise, a Supply Chain management and tracking product used byone of the largest logistics companies in Australia, working mostly with .NET, Javascript and MSSQL
-      Technical Leader for medium size teams (6-7 developers) working on individual systems.
+      Developer and designer for Connect Enterprise, a Supply Chain management and tracking product used by one of the largest logistics companies in Australia, working mostly with .NET, Javascript and MSSQL
+      Technical Leader for medium size teams (4-5 developers) working on individual systems.
       Designing and implementing interfaces to integrate with third-party software platforms and hardware
-    i18n: career.sandfield_desc
+    i18n: sandfield_desc
   date:
     detail: Feb. 2019
-    i18n: career.sandfield_date
+    i18n: sandfield_date
   job:
     detail: Senior Software Developer
-    i18n: career.sandfield_job
+    i18n: sandfield_job
   icon: fa-train
 
 - name:
     detail: Infor
-    i18n: career.infor
+    i18n: infor
   desc:
     detail: > 
       Responsible for customizing products at a technical level. 
@@ -32,43 +32,43 @@
       SQL server database administration, programming of stored procedures and jobs for customizations.
       Part of the production of logistics management systems for medical laboratories in Argentina. 
       Tasks consisted of implementing interfaces of our product (Infor SCE WMS) to external systems (vehicle tracking, traceability, etc), then we work on other implementations based on the previous one.
-    i18n: career.infor_desc
+    i18n: infor_desc
   date:
     detail: Dec. 2015
-    i18n: career.infor_date
+    i18n: infor_date
   job:
     detail: Technical Consultant
-    i18n: career.infor_job
+    i18n: infor_job
   icon: fa-globe
 
 - name:
     detail: Geosystems S.A
-    i18n: career.geo
+    i18n: geo
   desc:
     detail: >
       Software development for different organisms in Argentina. 
       A large part of the tasks involved the development of GIS systems. Development of Web and Desktop applications. Maintenance of Oracle databases. 
       Android developer .We made an application for the Cadastral sector, using different technologies such as C Sharp, VB .NET, Oracle Database. 
       Counting also with an interaction with Autocad and Mapguide
-    i18n: career.geo_desc
+    i18n: geo_desc
   date:
     detail: Jan. 2012
-    i18n: career.geo_date
+    i18n: geo_date
   job:
     detail: Full Stack Developer
-    i18n: career.geo_job
+    i18n: geo_job
   icon: fa-map
 
 - name:
     detail: Southward Solutions
-    i18n: career.southward
+    i18n: southward
   desc:
     detail: Junior developer, using languages such as Java, PHP and JS. Databases in MySql.
-    i18n: career.southward_desc
+    i18n: southward_desc
   date:
     detail: Jun. 2011
-    i18n: career.southward_date
+    i18n: southward_date
   job:
     detail: Junior Developer
-    i18n: career.southward_job
+    i18n: southward_job
   icon: fa-code

@@ -23,18 +23,16 @@ author:  # change following line to your infomation.
   cv:   # An online CV can be printed as PDF, leave blank if you don't have now
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
   skill_icon1:
-    - name: fa-android
     - name: fa-code
     - name: icon-csharp
   skill_icon2:
-    - name: fa-linux
     - name: fa-github
     - name: icon-javascript-alt
   desc: >
       Hi! My name is Leandro Iannotti, I am a systems engineer and full-stack developer.
       I am passionate in Computer Sciences, logical and mathematical problems. Strong architectural, product design and leadership capabilities. 
       I maintain excellent communication with stakeholders and a proactive attitude.
-      Interested in big data management areas and in different frameworks that can facilitate the user experience. 
+      Interested in big data management areas and different frameworks that can facilitate the user experience. 
   # Describe yourself.
 
 # comment
