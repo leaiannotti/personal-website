@@ -25,11 +25,10 @@
     "bigdata": " Proyecto hecho para la universidad utilizando diferentes herramientas del entorno Apache Haddop.",
     "botflix": " Bot de telegram hecho en python con el objectivo de poder automatizar la descarga de peliculas y series. Trabaja con diferentes API tales como Radarr, Sonarr, IMDB, TMDV y Plex"
   },
-  "education":
-  {
+  "education":{
     "my_education": "Mi educacion",
     "facu": "Universidad de Buenos Aires - Licenciatura en Ciencias de la computacion",
-    "facu_des": "Estudiante de la carrera de Licenciatura en ciencias de la computacion.",
+    "facu_desc": "Estudiante de la carrera de Licenciatura en ciencias de la computacion.",
     "facu_date": "Ago. 2011",
     "facu_job": "Estudiante"
   },

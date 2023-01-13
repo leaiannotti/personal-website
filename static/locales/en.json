@@ -29,7 +29,7 @@
   {
     "my_education": "My Education",
     "facu": "University of Buenos Aires - Bachellor in Computer Science.",
-    "facu_des": "Student of the Computer Science carrer in the Univeristy of Buenos Aires.",
+    "facu_desc": "Student of the Computer Science carrer in the Univeristy of Buenos Aires.",
     "facu_date": "Ago. 2011",
     "facu_job": "Student"
   },
@@ -40,7 +40,7 @@
     "southward_date": "Jun. 2011",
     "southward_job": "Junior Developer",
     "geo": "Geosystems",
-    "geo_des": " Software development for different organisms in Argentina. \nA large part of the tasks involved the development of GIS systems. Development of Web and Desktop applications. Maintenance of Oracle databases. \nAndroid developer .We made an application for the Cadastral sector, using different technologies such as C Sharp, VB .NET, Oracle Database. \nCounting also with an interaction with Autocad and Mapguide",
+    "geo_des": " Software development for different organisms in Argentina. <br> A large part of the tasks involved the development of GIS systems. Development of Web and Desktop applications. Maintenance of Oracle databases. \nAndroid developer .We made an application for the Cadastral sector, using different technologies such as C Sharp, VB .NET, Oracle Database. \nCounting also with an interaction with Autocad and Mapguide",
     "geo_date": "Ene. 2012",
     "geo_job": "Full Stack Developer",
     "infor": "Infor",
