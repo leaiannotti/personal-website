@@ -2,5 +2,5 @@
 
 label: Ability
 id : cs
-aspects: C#, SQL, JavaScript, Team-work, Machine Learning, Python, React
-percentage: 80, 95, 75, 90, 70, 50, 60
+aspects: C#, SQL, React, Team-work, NodeJS, Python, JavaScript
+percentage: 80, 60, 75, 90, 70, 50, 95

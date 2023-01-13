@@ -1,0 +1,63 @@
+{
+  "website":{
+    "title": "Leandro Iannotti"
+  },
+  "nav":{
+    "home": "Home",
+    "about_me": "About me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "career": "Career",
+    "education": "Education",
+    "blog": "Blog",
+    "link": "Link"
+  },
+  "about_me":{
+    "about_me": "About me",
+    "des": "Hi! My name is Leandro Iannotti, I am a systems engineer and full-stack developer. I am passionate in Computer Sciences, logical and mathematical problems. Strong architectural, product design and leadership capabilities. I maintain excellent communication with stakeholders and a proactive attitude.Interested in big data, integrations and in different frameworks that can facilitate the user experience."
+  },
+  "skills":{
+    "my_skills": "My skills"
+  },
+  "projects":{
+    "my_projects": "My projects",
+    "censo": "Project aimed at gathering information about the land movement, plot maintenance and population control of a state.",
+    "bigdata": "Project made for the university using different data control tools from Apache Hadoop",
+    "botflix": "Telegram bot made in python in order to automate the download of movies and series. Works with different APIs such as Radarr, Sonarr, IMDB, TMDV and Plex"
+  },
+  "education":
+  {
+    "my_education": "My Education",
+    "facu": "University of Buenos Aires - Bachellor in Computer Science.",
+    "facu_des": "Student of the Computer Science carrer in the Univeristy of Buenos Aires.",
+    "facu_date": "Ago. 2011",
+    "facu_job": "Student"
+  },
+  "career":{
+    "my_career": "My Career",
+    "southward": "Southward",
+    "southward_desc": "Junior developer, using languages such as Java, PHP and JS. Databases in MySql.",
+    "southward_date": "Jun. 2011",
+    "southward_job": "Junior Developer",
+    "geo": "Geosystems",
+    "geo_des": " Software development for different organisms in Argentina. \nA large part of the tasks involved the development of GIS systems. Development of Web and Desktop applications. Maintenance of Oracle databases. \nAndroid developer .We made an application for the Cadastral sector, using different technologies such as C Sharp, VB .NET, Oracle Database. \nCounting also with an interaction with Autocad and Mapguide",
+    "geo_date": "Ene. 2012",
+    "geo_job": "Full Stack Developer",
+    "infor": "Infor",
+    "infor_desc": "Responsible for customizing products at a technical level. \nWorking with software from the area of logistics and asset maintenance. \nContinuous communication with the client to discuss the proposals we offered. \nClose participation in the functional environment of the logistics area. \nSQL server database administration, programming of stored procedures and jobs for customizations.\nPart of the production of logistics management systems for medical laboratories in Argentina. \nTasks consisted of implementing interfaces of our product (Infor SCE WMS) to external systems (vehicle tracking, traceability, etc), then we work on other implementations based on the previous one.",
+    "infor_date": "Dec. 2015",
+    "infor_job": "Technical Consultant",
+    "sandfield": "Sandfield",
+    "sandfield_desc": " Part of the customer facing team.\nDesign and development of RESTful APIs,mobile apps and websites for the biggest logistics company in New Zealand. \nCross-platform Mobile AppsDevelopment using Cordova Framework.\nDeveloper and designer for Connect Enterprise, a Supply Chain management and tracking product used byone of the largest logistics companies in Australia, working mostly with .NET, Javascript and MSSQL\nTechnical Leader for medium size teams (6-7 developers) working on individual systems.\nDesigning and implementing interfaces to integrate with third-party software platforms and hardware",
+    "sandfield_date": "Feb. 2019",
+    "sandfield_job": "Senior Software developer"
+   },
+  "blog":{
+    "my_blog": "My Blog"
+  },
+  "link":{
+    "link": "Link",
+    "view": "views"
+  }
+
+}
