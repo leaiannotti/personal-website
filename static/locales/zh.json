@@ -25,17 +25,8 @@
     "bigdata": "使用 Apache Haddop 環境的不同工具為大學製作的項目。",
     "botflix": "用 python 製作的 Telegram 機器人，旨在能夠自動下載電影和連續劇。 使用不同的 API，例如 Radarr、Sonarr、IMDB、TMDV 和 Plex"
   },
-  "education":
-  {
-    "my_education": "我的教育",
-    "facu": "布宜諾斯艾利斯大學 - 計算機科學學士",
-    "facu_des": "計算機科學學士學位學生。",
-    "facu_date": "2011 年 8 月",
-    "facu_job": "學生"
-  },
   "career":{
     "my_career": "我的事業",
-    
     "southward": "Southward",
     "southward_des": "初級開發者。使用Java PHP、JS等語言。 MySql 中的數據庫。",
     "southward_date": "2011 年 6 月",
@@ -51,7 +42,15 @@
     "sandfield": "Sandfield",
     "sandfield_des": "軟件開發人員，面向客戶組的成員。 面向 Mainfreight 客戶的端到端應用程序開發。 創建 API 和測試自動化。 ",
     "sandfield_date": "2018 年 2 月",
-    "sandfield_job": "軟件開發人員"
+    "sandfield_job": "軟件開發人員",
+    "education":
+    {
+      "my_education": "我的教育",
+      "facu": "布宜諾斯艾利斯大學 - 計算機科學學士",
+      "facu_des": "計算機科學學士學位學生。",
+      "facu_date": "2011 年 8 月",
+      "facu_job": "學生"
+    }
   },
   "blog":{
     "my_blog": "我的博客"

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <div class="navy-line"></div>
-            <h1><span data-i18n="education.my_education">My Education</span></h1>
+            <h1><span data-i18n="career.education.my_education">My Education</span></h1>
         </div>
     </div>
     <div class="row features-block">
@@ -15,10 +15,10 @@
                         <i class="fa {{ education.icon }}"></i>
                     </div>
                     <div class="vertical-timeline-content wow {% if loopindex == 1 %} rotateInUpRight {% else %} rotateInUpLeft {% endif %}">
-                        <h2><span data-i18n="education.{{ education.name.i18n }}">{{ education.name.detail }}</span></h2>
-                        <p><span data-i18n="education.{{ education.desc.i18n }}">{{ education.desc.detail }} </span></p>
-                        <span class="vertical-date"><span data-i18n="education.{{ education.date.i18n }}"> {{ education.date.detail }} </span>
-                        <br/> <small><span data-i18n="education.{{ education.job.i18n }}">{{ education.job.detail }}</span></small> </span>
+                        <h2><span data-i18n="career.education.{{ career.education.name.i18n }}">{{ career.education.name.detail }}</span></h2>
+                        <p><span data-i18n="career.education.{{ career.education.desc.i18n }}">{{ career.education.desc.detail }} </span></p>
+                        <span class="vertical-date"><span data-i18n="education.{{ career.education.date.i18n }}"> {{ career.education.date.detail }} </span>
+                        <br/> <small><span data-i18n="education.{{ career.education.job.i18n }}">{{ career.education.job.detail }}</span></small> </span>
                     </div>
                 </div>
             {% endfor %}

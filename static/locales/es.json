@@ -14,7 +14,7 @@
   },
   "about_me":{
     "about_me": "Sobre mi",
-    "des": "Soy un desarrollador de software argentino con mas de 8 años de experiencia en el rubro. Me divierte resolver problemas de forma analitica y divertrime con lo que hago. Me gusta viajar, me hace feliz saber que no tengo que estar atado a ningun lado. Mis hobbies son la astronomia y el teatro."
+    "des": "Soy un desarrollador de software argentino con mas de 10 años de experiencia en el rubro. Me gusta resolver problemas de forma analitica y divertrime con lo que hago. Me gusta viajar, me hace feliz saber que no tengo que estar atado a ningun lado. Mis hobbies son la astronomia y el teatro."
   },
   "skills":{
     "my_skills": "Mis habilidades"
@@ -24,13 +24,6 @@
     "censo": "Proyecto realizado para la municipalidad de Berazategui para Android. Se encarga basicamente de censar parcelas y manzanas y corroborar la informacion con una base de datos.",
     "bigdata": " Proyecto hecho para la universidad utilizando diferentes herramientas del entorno Apache Haddop.",
     "botflix": " Bot de telegram hecho en python con el objectivo de poder automatizar la descarga de peliculas y series. Trabaja con diferentes API tales como Radarr, Sonarr, IMDB, TMDV y Plex"
-  },
-  "education":{
-    "my_education": "Mi educacion",
-    "facu": "Universidad de Buenos Aires - Licenciatura en Ciencias de la computacion",
-    "facu_desc": "Estudiante de la carrera de Licenciatura en ciencias de la computacion.",
-    "facu_date": "Ago. 2011",
-    "facu_job": "Estudiante"
   },
   "career":{
     "my_career": "Mi carrera",
@@ -49,7 +42,14 @@
     "sandfield": "Sandfield",
     "sandfield_desc": "Software developer, miembro del grupo de customer facing. Desarrollo de aplicaciones en to end para clientes de Mainfreight. Creacion de API's y automatizacion de test. ",
     "sandfield_date": "Feb. 2018",
-    "sandfield_job": "Software developer"
+    "sandfield_job": "Software developer",
+    "education":{
+      "my_education": "Mi educacion",
+      "facu": "Universidad de Buenos Aires - Licenciatura en Ciencias de la computacion",
+      "facu_desc": "Estudiante de la carrera de Licenciatura en ciencias de la computacion.",
+      "facu_date": "Ago. 2011",
+      "facu_job": "Estudiante"
+    }
   },
   "blog":{
     "my_blog": "My Blog"
