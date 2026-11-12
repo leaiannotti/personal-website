@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light dark;
   --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
   --text-2xs: 0.75rem; --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
   --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
@@ -13,10 +14,32 @@
   --color-rule: oklch(80% 0.012 230);
   --color-accent: oklch(87.5% 0.165 95); --color-accent-ink: oklch(19% 0.012 240); --color-focus: oklch(42% 0.11 80);
   --color-field: var(--color-accent); --color-field-ink: var(--color-ink); --color-field-ink-2: oklch(30% 0.03 90);
-  --color-night: var(--color-ink); --color-night-ink: var(--color-paper); --color-night-ink-2: oklch(80% 0.012 230);
+  --color-night: oklch(19% 0.012 240); --color-night-ink: oklch(96.2% 0.006 220); --color-night-ink-2: oklch(80% 0.012 230); --color-night-rule: oklch(33% 0.014 240);
+  --color-poplar: oklch(21.5% 0.004 107); --color-poplar-ink: oklch(95.6% 0.009 85); --color-poplar-ink-2: oklch(78% 0.012 90); --color-poplar-sage: oklch(72% 0.05 133);
   --font-display: "Clash Grotesk", ui-sans-serif, system-ui, sans-serif; --font-body: "Switzer", ui-sans-serif, system-ui, sans-serif; --font-outlier: "JetBrains Mono", ui-monospace, monospace;
   --radius-card: 2px; --radius-pill: 999px; --rule-hair: 1px; --rule-route: 2px; --shadow-card: none;
   --tracking-display: -0.025em;
   --text-hero: clamp(2.75rem, 5vw + 0.5rem, 6rem); --text-statement: clamp(2.25rem, 2.6vw + 1.25rem, 4rem); --text-email: clamp(1.125rem, 1.6vw + 0.75rem, 2.25rem);
-  --nav-height: 72px; --control-height: 48px; --marker: 12px; --measure-lede: 34ch; --station: 48px; --station-icon: 24px; --packet: 18px; --avatar: 96px;
+  --reveal-rise: 28px; --reveal-dur: 700ms; --reveal-step: 90ms; --band-inset: 4%; --band-dur: 1000ms; --route-draw: 1600ms;
+  --nav-height: 72px; --control-height: 48px; --marker: 12px; --measure-lede: 34ch; --station: 48px; --station-icon: 24px; --packet: 18px; --avatar: 96px; --icon-ui: 20px; --poplar-mark: 112px; --poplar-mark-s: 72px;
+}
+
+[data-mode="dark"] {
+  --color-paper: oklch(17% 0.012 230); --color-paper-2: oklch(20.5% 0.013 230); --color-paper-3: oklch(24% 0.014 230);
+  --color-ink: oklch(94% 0.008 220); --color-ink-2: oklch(81% 0.012 225); --color-muted: oklch(69% 0.014 230);
+  --color-rule: oklch(34% 0.014 230);
+  --color-accent: oklch(88% 0.14 95); --color-accent-ink: oklch(19% 0.012 240); --color-focus: oklch(88% 0.14 95);
+  --color-night: oklch(12.5% 0.01 230); --color-night-ink: oklch(94% 0.008 220); --color-night-ink-2: oklch(75% 0.012 225); --color-night-rule: oklch(30% 0.012 230);
+  --color-poplar: oklch(21.5% 0.004 107);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-mode]) {
+    --color-paper: oklch(17% 0.012 230); --color-paper-2: oklch(20.5% 0.013 230); --color-paper-3: oklch(24% 0.014 230);
+    --color-ink: oklch(94% 0.008 220); --color-ink-2: oklch(81% 0.012 225); --color-muted: oklch(69% 0.014 230);
+    --color-rule: oklch(34% 0.014 230);
+    --color-accent: oklch(88% 0.14 95); --color-accent-ink: oklch(19% 0.012 240); --color-focus: oklch(88% 0.14 95);
+    --color-night: oklch(12.5% 0.01 230); --color-night-ink: oklch(94% 0.008 220); --color-night-ink-2: oklch(75% 0.012 225); --color-night-rule: oklch(30% 0.012 230);
+    --color-poplar: oklch(21.5% 0.004 107);
+  }
 }

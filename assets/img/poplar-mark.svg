@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="160 55 275 495" role="img" aria-label="Poplar Labs">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#9aab8e"/>
+      <stop offset="100%" stop-color="#c4946c"/>
+    </linearGradient>
+  </defs>
+  <rect x="288" y="280" width="24" height="262" fill="#5b6b4f"/>
+  <g fill="none" stroke-linecap="round">
+    <circle cx="290" cy="380" r="13" stroke="url(#g1)" stroke-width="5"/>
+    <line x1="290" y1="380" x2="215" y2="330" stroke="url(#g1)" stroke-width="5"/>
+    <circle cx="215" cy="330" r="9" stroke="#9aab8e" stroke-width="4"/>
+    <line x1="215" y1="330" x2="180" y2="305" stroke="#9aab8e" stroke-width="4"/>
+    <circle cx="180" cy="305" r="6" stroke="#c4946c" stroke-width="3"/>
+    <circle cx="310" cy="400" r="13" stroke="url(#g1)" stroke-width="5"/>
+    <line x1="310" y1="400" x2="380" y2="350" stroke="url(#g1)" stroke-width="5"/>
+    <circle cx="380" cy="350" r="9" stroke="#9aab8e" stroke-width="4"/>
+    <line x1="380" y1="350" x2="415" y2="325" stroke="#9aab8e" stroke-width="4"/>
+    <circle cx="415" cy="325" r="6" stroke="#c4946c" stroke-width="3"/>
+    <circle cx="291" cy="320" r="10" stroke="url(#g1)" stroke-width="4.5"/>
+    <line x1="291" y1="320" x2="235" y2="280" stroke="url(#g1)" stroke-width="4.5"/>
+    <circle cx="235" cy="280" r="7" stroke="#9aab8e" stroke-width="3.5"/>
+    <line x1="235" y1="280" x2="205" y2="260" stroke="#9aab8e" stroke-width="3.5"/>
+    <circle cx="205" cy="260" r="5" stroke="#c4946c" stroke-width="2.5"/>
+    <circle cx="309" cy="335" r="10" stroke="url(#g1)" stroke-width="4.5"/>
+    <line x1="309" y1="335" x2="365" y2="295" stroke="url(#g1)" stroke-width="4.5"/>
+    <circle cx="365" cy="295" r="7" stroke="#9aab8e" stroke-width="3.5"/>
+    <line x1="365" y1="295" x2="395" y2="275" stroke="#9aab8e" stroke-width="3.5"/>
+    <circle cx="395" cy="275" r="5" stroke="#c4946c" stroke-width="2.5"/>
+    <circle cx="293" cy="265" r="8" stroke="url(#g1)" stroke-width="4"/>
+    <line x1="293" y1="265" x2="252" y2="235" stroke="url(#g1)" stroke-width="4"/>
+    <circle cx="252" cy="235" r="6" stroke="#9aab8e" stroke-width="3"/>
+    <line x1="252" y1="235" x2="230" y2="220" stroke="#9aab8e" stroke-width="3"/>
+    <circle cx="230" cy="220" r="4" stroke="#c4946c" stroke-width="2.5"/>
+    <circle cx="307" cy="278" r="8" stroke="url(#g1)" stroke-width="4"/>
+    <line x1="307" y1="278" x2="348" y2="250" stroke="url(#g1)" stroke-width="4"/>
+    <circle cx="348" cy="250" r="6" stroke="#9aab8e" stroke-width="3"/>
+    <line x1="348" y1="250" x2="370" y2="235" stroke="#9aab8e" stroke-width="3"/>
+    <circle cx="370" cy="235" r="4" stroke="#c4946c" stroke-width="2.5"/>
+  </g>
+  <g stroke="#9aab8e" stroke-width="5" fill="none" stroke-linecap="round">
+    <line x1="285" y1="260" x2="280" y2="100"/>
+    <line x1="293" y1="250" x2="293" y2="80"/>
+    <line x1="300" y1="245" x2="300" y2="68"/>
+    <line x1="307" y1="250" x2="307" y2="80"/>
+    <line x1="315" y1="260" x2="320" y2="100"/>
+    <line x1="280" y1="140" x2="260" y2="120" stroke-width="4"/>
+    <line x1="280" y1="120" x2="265" y2="100" stroke="#c4946c" stroke-width="3"/>
+    <line x1="320" y1="140" x2="340" y2="120" stroke-width="4"/>
+    <line x1="320" y1="120" x2="335" y2="100" stroke="#c4946c" stroke-width="3"/>
+  </g>
+  <g fill="#c4946c">
+    <circle cx="290" cy="380" r="4.5"/>
+    <circle cx="310" cy="400" r="4.5"/>
+    <circle cx="291" cy="320" r="4"/>
+    <circle cx="309" cy="335" r="4"/>
+    <circle cx="293" cy="265" r="3.5"/>
+    <circle cx="307" cy="278" r="3.5"/>
+  </g>
+</svg>

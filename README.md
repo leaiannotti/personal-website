@@ -6,11 +6,14 @@ A single static page: plain HTML and CSS, no build step, served by GitHub Pages 
 
 ## Structure
 
-- `index.html`: the page.
+- `index.html`: the page in English; `es/index.html`: the same page in Spanish. Keep both in sync.
+- `assets/js/map.js`: the interactive route map (labels for both languages live here).
+- `assets/js/site.js`: light and dark mode toggle, and the section reveal on scroll.
+- `assets/js/icons.js`: Phosphor icons (MIT) used by the map and the mode toggle.
 - `assets/css/tokens.css`: colours, type, spacing and sizes. Every colour and font goes through a token.
 - `assets/css/base.css`: base rules from the Hallmark scaffold.
 - `assets/css/site.css`: the page styles. Its first lines record the design decisions.
-- `assets/img/`: portrait (`leandro.webp`, `leandro.jpg`) and the social preview (`og.jpg`, 1200 x 630).
+- `assets/img/`: portrait, Poplar Labs mark (`poplar-mark.svg`) and the social preview (`og.jpg`, 1200 x 630).
 
 ## Local preview
 

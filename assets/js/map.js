@@ -18,12 +18,34 @@
     { year: "2023", name: "Renti", stations: ["tenant", "rental", "sso"] },
   ];
 
-  const LABELS = {
-    cad: "CAD drawings", cadastre: "Cadastre", fieldapp: "Field app",
-    tracking: "Vehicle tracking", warehouse: "Warehouse", trace: "Traceability",
-    hardware: "Field hardware", supply: "Supply chain", mobile: "Mobile apps",
-    tenant: "Tenant app", rental: "Rental platform", sso: "Single sign-on",
+  const STRINGS = {
+    en: {
+      labels: {
+        cad: "AutoCAD integrations", cadastre: "Cadastre", fieldapp: "Field mobile app",
+        tracking: "Vehicle tracking", warehouse: "Warehouse", trace: "Traceability",
+        hardware: "Field hardware", supply: "Supply chain", mobile: "Mobile apps",
+        tenant: "Tenant app", rental: "Rental platform", sso: "Third-party integrations",
+      },
+      now: "Now",
+      play: "Play the route",
+      pause: "Pause",
+      station: (label, year, name) => `${label}, ${year} at ${name}`,
+    },
+    es: {
+      labels: {
+        cad: "Integraciones con AutoCAD", cadastre: "Catastro", fieldapp: "App móvil de campo",
+        tracking: "Rastreo de vehículos", warehouse: "Depósito", trace: "Trazabilidad",
+        hardware: "Hardware de campo", supply: "Cadena de suministro", mobile: "Apps móviles",
+        tenant: "App para inquilinos", rental: "Plataforma de alquileres", sso: "Integraciones con terceros",
+      },
+      now: "Hoy",
+      play: "Recorrer la ruta",
+      pause: "Pausa",
+      station: (label, year, name) => `${label}, ${year} en ${name}`,
+    },
   };
+  const T = STRINGS[document.documentElement.lang] || STRINGS.en;
+  const LABELS = T.labels;
 
   const connections = [...log.querySelectorAll("li")].map((li) => ({
     from: li.dataset.from,
@@ -56,7 +78,7 @@
   });
   const end = document.createElement("p");
   end.className = "milestone milestone-end";
-  end.textContent = "Now";
+  end.textContent = T.now;
   map.append(end);
 
   const nodes = {};
@@ -66,7 +88,7 @@
       const button = document.createElement("button");
       button.type = "button";
       button.className = "node";
-      button.setAttribute("aria-label", `${LABELS[id]}, ${row.year} at ${row.name}`);
+      button.setAttribute("aria-label", T.station(LABELS[id], row.year, row.name));
       button.setAttribute("aria-pressed", "false");
       const icon = document.createElementNS(SVG_NS, "svg");
       icon.setAttribute("viewBox", "0 0 256 256");
@@ -249,14 +271,14 @@
     if (timer) window.clearInterval(timer);
     timer = null;
     play.setAttribute("aria-pressed", "false");
-    play.textContent = "Play the route";
+    play.textContent = T.play;
   }
 
   function start() {
     if (current >= connections.length - 1) select(0);
     else select(current + 1);
     play.setAttribute("aria-pressed", "true");
-    play.textContent = "Pause";
+    play.textContent = T.pause;
     timer = window.setInterval(() => {
       if (current >= connections.length - 1) {
         stop();
@@ -276,18 +298,39 @@
   });
   play.addEventListener("click", () => (timer ? stop() : start()));
 
+  // The route draws itself once, and each station appears as the line reaches it.
+  function drawIn() {
+    if (reduceMotion.matches || !route.getTotalLength) return 0;
+    const length = route.getTotalLength();
+    const duration = parseFloat(getComputedStyle(map).getPropertyValue("--route-draw")) || 1600;
+    const easing = "cubic-bezier(0.65, 0, 0.35, 1)";
+    route.animate([{ strokeDasharray: `${length}`, strokeDashoffset: length }, { strokeDasharray: `${length}`, strokeDashoffset: 0 }], { duration, easing });
+    const order = [];
+    ROWS.forEach((row, i) => {
+      order.push(milestones[i]);
+      const ids = i % 2 === 0 ? row.stations : [...row.stations].reverse();
+      ids.forEach((id) => order.push([nodes[id], labels[id]]));
+    });
+    order.push(end);
+    order.forEach((item, n) => {
+      const delay = (n / order.length) * duration;
+      [item].flat().forEach((el) => {
+        el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 320, delay, easing: "cubic-bezier(0.16, 1, 0.3, 1)", fill: "backwards" });
+      });
+    });
+    return duration;
+  }
+
   map.classList.add("is-ready");
   panel.hidden = false;
   layout();
   new ResizeObserver(layout).observe(map);
-  if (document.fonts) document.fonts.ready.then(layout);
   select(0, { animate: false });
 
-  const hint = new IntersectionObserver((entries) => {
-    if (entries.some((e) => e.isIntersecting)) {
-      window.setTimeout(() => send(0), 700);
-      hint.disconnect();
-    }
+  const ready = document.fonts ? document.fonts.ready : Promise.resolve();
+  ready.then(() => {
+    layout();
+    const drawn = drawIn();
+    window.setTimeout(() => send(0), drawn + 300);
   });
-  hint.observe(map);
 })();

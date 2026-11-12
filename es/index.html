@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leandro Iannotti, ingeniero de software y tech lead en Auckland</title>
+  <meta name="description" content="Ingeniero de software senior y tech lead en Auckland. Un mapa de los sistemas que conecté, desde Buenos Aires en 2012 hasta Auckland hoy.">
+  <link rel="canonical" href="https://leandroiannotti.com/es/">
+  <link rel="alternate" hreflang="en" href="https://leandroiannotti.com/">
+  <link rel="alternate" hreflang="es" href="https://leandroiannotti.com/es/">
+  <link rel="alternate" hreflang="x-default" href="https://leandroiannotti.com/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Leandro Iannotti">
+  <meta property="og:description" content="Ingeniero de software senior y tech lead en Auckland. Hago que los sistemas hablen entre sí.">
+  <meta property="og:url" content="https://leandroiannotti.com/es/">
+  <meta property="og:image" content="https://leandroiannotti.com/assets/img/og.jpg">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:locale:alternate" content="en_NZ">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f1f5f6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14181c" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script>(() => { const d = document.documentElement; d.classList.add("js"); try { const m = localStorage.getItem("mode"); if (m === "dark" || m === "light") d.dataset.mode = m; } catch (e) {} })();</script>
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@600&f[]=switzer@400,600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script src="../assets/js/icons.js" defer></script>
+  <script src="../assets/js/site.js" defer></script>
+  <script src="../assets/js/map.js" defer></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Leandro Iannotti","jobTitle":"Ingeniero de software senior","url":"https://leandroiannotti.com/es/","address":{"@type":"PostalAddress","addressLocality":"Auckland","addressCountry":"NZ"},"sameAs":["https://www.linkedin.com/in/leandro-iannotti/","https://github.com/leaiannotti"]}
+  </script>
+</head>
+<body>
+  <header class="container nav">
+    <a class="wordmark" href="#top" aria-label="Leandro Iannotti, volver arriba">Leandro Iannotti</a>
+    <div class="nav-end">
+      <nav aria-label="Secciones">
+        <ul class="nav-links">
+          <li><a href="#enfoque">Enfoque</a></li>
+          <li><a href="#ahora">Ahora</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="lang-link" href="../" hreflang="en" lang="en">English</a>
+      <button class="icon-button" type="button" data-mode-toggle data-to-dark="Cambiar a modo oscuro" data-to-light="Cambiar a modo claro" aria-label="Cambiar el modo de color"></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="container hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title" style="--i: 0">Hago que los sistemas hablen entre sí.</h1>
+        <p class="lede" style="--i: 1">Ingeniero de software senior y tech lead en Auckland. El mapa es interactivo.</p>
+        <div class="actions" style="--i: 2">
+          <a class="button" href="mailto:leandro.iannotti@gmail.com">Enviar un email</a>
+          <a class="text-link" href="https://www.linkedin.com/in/leandro-iannotti/">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="map-area">
+        <div class="map diagram" data-map role="group" aria-label="Mapa de los sistemas que conecté, por año"></div>
+        <ol class="log" data-log aria-label="Sistemas que conecté, del más antiguo al más reciente">
+          <li data-from="cadastre" data-to="cad" data-year="2012" data-where="GeoSystems, Buenos Aires">Planos de AutoCAD y MapGuide, sincronizados con el catastro en Oracle.</li>
+          <li data-from="cadastre" data-to="fieldapp" data-year="2012" data-where="GeoSystems, Buenos Aires">Una app Android para el trabajo de campo catastral, que alimenta los mismos registros.</li>
+          <li data-from="warehouse" data-to="tracking" data-year="2015" data-where="Infor, Buenos Aires">Software de depósitos para laboratorios médicos, conectado al rastreo de vehículos.</li>
+          <li data-from="warehouse" data-to="trace" data-year="2015" data-where="Infor, Buenos Aires">Los mismos depósitos, conectados a sistemas de trazabilidad.</li>
+          <li data-from="supply" data-to="hardware" data-year="2019" data-where="Sandfield, Auckland">Plataformas de cadena de suministro en Nueva Zelanda y Australia, conectadas a hardware en campo.</li>
+          <li data-from="supply" data-to="mobile" data-year="2019" data-where="Sandfield, Auckland">APIs y apps móviles multiplataforma para equipos de logística.</li>
+          <li data-from="rental" data-to="tenant" data-year="2023" data-where="Renti, Auckland">Una app Flutter para inquilinos, construida con Clean Architecture.</li>
+          <li data-from="rental" data-to="sso" data-year="2023" data-where="Renti, Auckland">Integraciones con plataformas de terceros y acceso con Google y Microsoft.</li>
+        </ol>
+      </div>
+
+      <div class="panel" data-panel aria-live="polite" hidden>
+        <p class="panel-head"><span class="panel-year" data-panel-year></span> <span class="panel-where" data-panel-where></span></p>
+        <p class="panel-line" data-panel-line></p>
+        <div class="panel-controls">
+          <button class="control" type="button" data-prev>Antes</button>
+          <button class="control" type="button" data-next>Después</button>
+          <button class="control control-play" type="button" data-play aria-pressed="false">Recorrer la ruta</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section approach" id="enfoque" aria-labelledby="approach-title" data-reveal>
+      <h2 class="statement reveal-item" id="approach-title">Primero el negocio, después el código.</h2>
+      <ul class="principles">
+        <li class="reveal-item">De monolito a servicios, paso a paso</li>
+        <li class="reveal-item">Integraciones bien conectadas y monitoreadas</li>
+        <li class="reveal-item">IA que acelera la entrega, con personas revisando</li>
+        <li class="reveal-item">La mentoría como parte del trabajo</li>
+      </ul>
+    </section>
+
+    <section class="now section band" id="ahora" aria-labelledby="now-title" data-reveal>
+      <div class="container">
+        <h2 class="section-head reveal-item" id="now-title">En qué estoy trabajando</h2>
+        <div class="now-grid">
+          <article class="now-item reveal-item">
+            <h3>Renti</h3>
+            <p class="now-role">Senior software developer desde 2023</p>
+            <p>Arquitectura backend, integraciones y la app Flutter que usan los inquilinos.</p>
+          </article>
+          <article class="now-item now-poplar reveal-item">
+            <img class="poplar-mark" src="../assets/img/poplar-mark.svg" width="275" height="495" alt="Logo de Poplar Labs, un álamo dibujado con ramas y nodos de conexión">
+            <div class="poplar-copy">
+              <h3>Poplar Labs</h3>
+              <p class="now-role">Fundador y director</p>
+              <p>Un pequeño estudio de ingeniería que estoy armando en Auckland, para empresas cuyas herramientas deberían trabajar juntas.</p>
+              <p class="poplar-tagline" lang="en">Technology. Grounded.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="night band" id="contacto" data-reveal>
+    <div class="container contact">
+      <div class="contact-head reveal-item">
+        <img class="contact-photo" src="../assets/img/leandro.jpg" width="880" height="880" alt="Leandro Iannotti" loading="lazy">
+        <h2 class="section-head">Un café en Auckland o una llamada desde cualquier lugar</h2>
+      </div>
+      <a class="email reveal-item" href="mailto:leandro.iannotti@gmail.com">leandro.iannotti@gmail.com</a>
+      <ul class="elsewhere reveal-item">
+        <li><a href="tel:+64210709644">+64 21 070 9644</a></li>
+        <li><a href="../assets/Leandro-Iannotti-CV.pdf" download>Descargar mi CV</a></li>
+        <li><a href="https://www.linkedin.com/in/leandro-iannotti/">LinkedIn</a></li>
+        <li><a href="https://github.com/leaiannotti">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <p class="colophon"><span>© 2026 Leandro Iannotti</span><span>Auckland, Nueva Zelanda</span></p>
+    </div>
+  </footer>
+</body>
+</html>
