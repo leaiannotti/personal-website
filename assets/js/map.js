@@ -353,6 +353,9 @@
         if (top < margin || bottom > window.innerHeight - margin) {
           const fits = bottom - top <= window.innerHeight - 2 * margin;
           const target = window.scrollY + (fits ? top - margin : bottom - window.innerHeight + margin);
+          // The page route line draws as the reader scrolls; our own auto-scroll must not count
+          // as reading. Tell it how far we are about to move so it re-baselines from here.
+          window.dispatchEvent(new CustomEvent("route:pin", { detail: Math.max(0, target - window.scrollY) }));
           window.scrollTo({ top: Math.max(0, target), behavior: reduceMotion.matches ? "auto" : "smooth" });
           setPlaying(true);
           pendingStart = window.setTimeout(() => {

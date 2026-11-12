@@ -30,6 +30,7 @@
   let length = 0;
   let stopYs = [];
   let lead = 0;
+  let pin = 0;
   let ticking = false;
 
   const page = (rect) => ({ x: rect.left + window.scrollX, y: rect.top + window.scrollY, w: rect.width, h: rect.height });
@@ -111,7 +112,11 @@
 
   function update() {
     ticking = false;
-    const tip = reduceMotion.matches ? Infinity : window.scrollY + window.innerHeight * 0.72 - lead;
+    // Scroll that the site performs itself (the play button framing the map) is not reading:
+    // the line only advances from what the reader scrolls after that.
+    const tip = reduceMotion.matches
+      ? Infinity
+      : Math.max(0, window.scrollY - pin) + window.innerHeight * 0.72 - lead;
     let drawn = length;
     if (tip !== Infinity) {
       const hit = samples.find((s) => s.y >= tip);
@@ -121,6 +126,14 @@
     path.style.visibility = drawn < 1 ? "hidden" : "visible";
     stopYs.forEach((y, i) => dots[i].classList.toggle("is-reached", y <= tip));
   }
+
+  window.addEventListener("route:pin", (e) => {
+    pin += Math.max(0, e.detail || 0);
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
+  });
 
   window.addEventListener(
     "scroll",
