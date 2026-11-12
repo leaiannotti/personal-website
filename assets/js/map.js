@@ -180,6 +180,33 @@
       edges[i].setAttribute("x2", b.x);
       edges[i].setAttribute("y2", b.y);
     });
+    reserveReadout();
+  }
+
+  // Reserve enough room for the longest stop and the full play label. Otherwise a shorter
+  // opening text (or the Pause label) changes the scroll target halfway through the tour.
+  function reserveReadout() {
+    const probe = panel.cloneNode(true);
+    probe.removeAttribute("data-panel");
+    probe.removeAttribute("aria-live");
+    probe.setAttribute("aria-hidden", "true");
+    Object.assign(probe.style, {
+      position: "absolute", visibility: "hidden", pointerEvents: "none",
+      width: `${panel.getBoundingClientRect().width}px`,
+    });
+    probe.style.setProperty("--panel-height", "0px");
+    const playLabel = probe.querySelector("[data-play-label]");
+    if (playLabel) playLabel.textContent = T.play;
+    panel.after(probe);
+    let height = 0;
+    connections.forEach((c) => {
+      probe.querySelector("[data-panel-year]").textContent = c.year;
+      probe.querySelector("[data-panel-where]").textContent = c.where;
+      probe.querySelector("[data-panel-line]").textContent = c.line;
+      height = Math.max(height, probe.offsetHeight);
+    });
+    probe.remove();
+    panel.style.setProperty("--panel-height", `${height}px`);
   }
 
   const yearEl = panel.querySelector("[data-panel-year]");
@@ -192,6 +219,7 @@
   const setPlaying = (on) => {
     plays.forEach((button) => {
       button.setAttribute("aria-pressed", String(on));
+      button.setAttribute("aria-label", on ? T.pause : T.play);
       const label = button.querySelector("[data-play-label]");
       if (label) label.textContent = on ? T.pause : T.play;
       const icon = button.querySelector("[data-icon] path");
@@ -201,6 +229,8 @@
 
   let current = 0;
   let timer = null;
+  let pendingStart = null;
+  setPlaying(false);
 
   function send(i) {
     if (reduceMotion.matches) return;
@@ -279,7 +309,9 @@
 
   function stop() {
     if (timer) window.clearInterval(timer);
+    if (pendingStart !== null) window.clearTimeout(pendingStart);
     timer = null;
+    pendingStart = null;
     setPlaying(false);
   }
 
@@ -306,17 +338,27 @@
   });
   plays.forEach((button) =>
     button.addEventListener("click", () => {
-      if (timer) {
+      if (timer || pendingStart !== null) {
         stop();
         return;
       }
-      // From the hero on a phone the map sits below the fold: bring it into view first.
+      // From the hero, frame the map and its readout together so the stops and the story are both
+      // in view. If they do not fit, keep the readout whole and show as much of the map as possible.
       if (button.hasAttribute("data-play-scroll")) {
-        const box = map.getBoundingClientRect();
-        if (box.top < 0 || box.bottom > window.innerHeight) {
-          map.scrollIntoView({ block: "center", behavior: reduceMotion.matches ? "auto" : "smooth" });
+        const m = map.getBoundingClientRect();
+        const p = panel.getBoundingClientRect();
+        const top = Math.min(m.top, p.top);
+        const bottom = Math.max(m.bottom, p.bottom);
+        const margin = 12;
+        if (top < margin || bottom > window.innerHeight - margin) {
+          const fits = bottom - top <= window.innerHeight - 2 * margin;
+          const target = window.scrollY + (fits ? top - margin : bottom - window.innerHeight + margin);
+          window.scrollTo({ top: Math.max(0, target), behavior: reduceMotion.matches ? "auto" : "smooth" });
           setPlaying(true);
-          window.setTimeout(() => start({ fromStart: true }), reduceMotion.matches ? 0 : 500);
+          pendingStart = window.setTimeout(() => {
+            pendingStart = null;
+            start({ fromStart: true });
+          }, reduceMotion.matches ? 0 : 500);
           return;
         }
       }

@@ -100,7 +100,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 .log { display: grid; gap: var(--space-md); margin: 0; padding-left: var(--space-lg); max-width: 60ch; }
 
 /* The readout */
-.panel { grid-area: panel; display: grid; align-content: start; gap: var(--space-sm); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); max-width: 32rem; }
+.panel { grid-area: panel; display: grid; align-content: start; gap: var(--space-sm); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); max-width: 32rem; min-height: var(--panel-height, 0px); }
 .panel-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-xs) var(--space-sm); }
 .panel-year { font-family: var(--font-outlier); font-size: var(--text-2xl); line-height: 1; font-variant-numeric: tabular-nums; }
 .panel-where { color: var(--color-ink-2); }
@@ -241,6 +241,7 @@ a.contact-value:hover, .contact-link:hover .contact-value { text-decoration: und
 }
 
 @media (max-width: 40rem) {
+  .hero { row-gap: var(--space-lg); }
   .nav-links { display: none; }
   .nav-end { gap: var(--space-sm); }
   .wordmark { font-size: var(--text-md); }
@@ -255,6 +256,8 @@ a.contact-value:hover, .contact-link:hover .contact-value { text-decoration: und
   .milestone-name { display: none; }
   .panel-line { min-height: 2lh; font-size: var(--text-md); }
   .control { padding-inline: var(--space-sm); }
+  .panel .control-play { justify-content: center; width: var(--control-height); padding-inline: 0; }
+  .panel .control-play [data-play-label] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .principles { grid-template-columns: minmax(0, 1fr); }
   .hero h1 { max-width: 14ch; }
   .now-poplar { grid-template-columns: minmax(0, 1fr); padding: var(--space-lg); }
@@ -266,6 +269,12 @@ a.contact-value:hover, .contact-link:hover .contact-value { text-decoration: und
   .contact-actions { margin-top: var(--space-sm); }
   .contact-title { font-size: var(--text-display-s); }
   .poplar-mark { width: var(--poplar-mark-s); }
+}
+
+/* Short phones: a slightly flatter map so the map and its readout fit on one screen together */
+@media (max-width: 40rem) and (max-height: 720px) {
+  .map { aspect-ratio: 5 / 6; }
+  .panel { gap: var(--space-xs); padding-top: var(--space-md); }
 }
 
 @media (prefers-reduced-motion: reduce) {
