@@ -152,7 +152,6 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 .night { --color-focus: var(--color-accent); background: var(--color-night); color: var(--color-night-ink); }
 .contact { padding-block: var(--section-gap-s) var(--space-2xl); display: grid; gap: var(--space-xl); }
 .contact-head { display: flex; align-items: center; gap: var(--space-lg); }
-.contact-photo { width: var(--avatar); height: var(--avatar); flex-shrink: 0; object-fit: cover; border-radius: var(--radius-pill); }
 .contact .section-head { max-width: 16ch; }
 .email { font-family: var(--font-display); font-weight: 600; font-size: var(--text-email); letter-spacing: var(--tracking-display); line-height: 1.1; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.18em; white-space: nowrap; justify-self: start; transition: color var(--dur-short) var(--ease-out); }
 .email:hover { color: var(--color-accent); }
@@ -209,7 +208,6 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
   .control { padding-inline: var(--space-sm); }
   .principles { grid-template-columns: minmax(0, 1fr); }
   .hero h1 { max-width: 14ch; }
-  .contact-head { align-items: flex-start; flex-direction: column; }
   .now-poplar { grid-template-columns: minmax(0, 1fr); padding: var(--space-lg); }
   .poplar-mark { width: var(--poplar-mark-s); }
 }

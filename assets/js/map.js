@@ -245,7 +245,7 @@
     if (animate) send(i);
   }
 
-  function selectNode(id) {
+  function selectNode(id, { animate = true } = {}) {
     const related = connections.map((c, i) => (c.from === id || c.to === id ? i : -1)).filter((i) => i >= 0);
     if (!related.length) return;
     current = related[0];
@@ -256,7 +256,7 @@
     });
     paint(related, touched);
     show(current);
-    related.forEach((i, n) => window.setTimeout(() => send(i), n * 180));
+    if (animate) related.forEach((i, n) => window.setTimeout(() => send(i), n * 180));
   }
 
   function reveal() {
@@ -321,16 +321,19 @@
     return duration;
   }
 
+  // Open on the present: Renti, the latest stop, with both of its connections lit.
+  const HOME = "rental";
+
   map.classList.add("is-ready");
   panel.hidden = false;
   layout();
   new ResizeObserver(layout).observe(map);
-  select(0, { animate: false });
+  selectNode(HOME, { animate: false });
 
   const ready = document.fonts ? document.fonts.ready : Promise.resolve();
   ready.then(() => {
     layout();
     const drawn = drawIn();
-    window.setTimeout(() => send(0), drawn + 300);
+    window.setTimeout(() => selectNode(HOME), drawn + 300);
   });
 })();
