@@ -17,6 +17,6 @@
   --font-display: "Clash Grotesk", ui-sans-serif, system-ui, sans-serif; --font-body: "Switzer", ui-sans-serif, system-ui, sans-serif; --font-outlier: "JetBrains Mono", ui-monospace, monospace;
   --radius-card: 2px; --radius-pill: 999px; --rule-hair: 1px; --rule-route: 2px; --shadow-card: none;
   --tracking-display: -0.025em;
-  --text-hero: clamp(2.75rem, 5vw + 0.5rem, 6rem); --text-statement: clamp(2.25rem, 2.6vw + 1.25rem, 4rem); --text-email: clamp(1.125rem, 4.6vw + 0.25rem, 3.75rem);
+  --text-hero: clamp(2.75rem, 5vw + 0.5rem, 6rem); --text-statement: clamp(2.25rem, 2.6vw + 1.25rem, 4rem); --text-email: clamp(1.125rem, 1.6vw + 0.75rem, 2.25rem);
   --nav-height: 72px; --control-height: 48px; --marker: 12px; --measure-lede: 34ch; --stop: 8px; --packet: 16px; --avatar: 96px;
 }

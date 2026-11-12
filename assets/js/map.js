@@ -34,8 +34,15 @@
     to: li.dataset.to,
     year: li.dataset.year,
     where: li.dataset.where,
+    photo: li.dataset.photo,
+    alt: li.dataset.alt,
     line: li.textContent.trim(),
   }));
+
+  [...new Set(connections.map((c) => c.photo))].forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
 
   const svg = document.createElementNS(SVG_NS, "svg");
   svg.setAttribute("viewBox", "0 0 100 100");
@@ -140,6 +147,7 @@
   const prev = panel.querySelector("[data-prev]");
   const next = panel.querySelector("[data-next]");
   const play = panel.querySelector("[data-play]");
+  const photoEl = panel.querySelector("[data-panel-photo]");
 
   let current = 0;
   let timer = null;
@@ -182,6 +190,16 @@
     yearEl.textContent = c.year;
     whereEl.textContent = c.where;
     lineEl.textContent = c.line;
+    if (photoEl && !photoEl.src.endsWith(c.photo)) {
+      photoEl.src = c.photo;
+      photoEl.alt = c.alt;
+      if (!reduceMotion.matches) {
+        photoEl.animate(
+          [{ opacity: 0, transform: "scale(1.04)" }, { opacity: 1, transform: "scale(1)" }],
+          { duration: 420, easing: "cubic-bezier(0.16, 1, 0.3, 1)" }
+        );
+      }
+    }
     prev.disabled = i === 0;
     next.disabled = i === connections.length - 1;
   }

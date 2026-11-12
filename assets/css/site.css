@@ -2,7 +2,8 @@
  * paper: oklch(96.2% 0.006 220) · accent: oklch(87.5% 0.165 95) · display: Clash Grotesk · body: Switzer · hero: head and one line on the left, the interactive system map on the right, its readout under the copy · nav: wordmark left, three in-page anchors right, no button · footer: the contact band in ink, a small portrait beside the head, the email set large · imagery: the system map as a diagram of real data, one small real portrait · signature: tap a system and a yellow packet travels the connection Leandro built
  * axes: light/grotesk-sans/chromatic-yellow · posture: restrained, yellow only for packets, active stations and the primary action · contrast: pass · fold: pass · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H4 E4 S5 R5 V5 · weakest: H, a twelve-station map beside the head can split attention; the map stays in rule grey until touched and the head keeps the weight */
-/* Hallmark · waive 79 · the readout panel and its controls sit under the copy and run to y 820 at 1440 · the map readout is part of the hero and the lint counts only the copy block */
+/* Hallmark · waive 79 · the readout panel and its controls sit under the copy and run to y 830 at 1440 · the map readout is part of the hero and the lint counts only the copy block */
+/* Hallmark · dismissed 58 · the footer window holds the CC BY-SA credits the four route photos require, set at the smallest size */
 /* Hallmark · dismissed 77 · four sections on a one-person page; the career lives inside the hero map instead of its own band */
 /* Hallmark · focus colour sits darker than the accent so the ring holds 3:1 on pale paper; the night band swaps it to the accent */
 @import url("./tokens.css");
@@ -20,8 +21,8 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 .wordmark:hover { text-decoration: underline; text-decoration-thickness: 2px; }
 
 /* Hero */
-.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "copy map" "panel map"; grid-template-rows: auto 1fr; gap: var(--space-xl) var(--space-2xl); align-items: start; padding-block: var(--space-2xl) var(--space-3xl); }
-.hero-copy { grid-area: copy; display: grid; gap: var(--space-lg); justify-items: start; }
+.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "copy map" "copy panel"; gap: var(--space-lg) var(--space-2xl); align-items: start; padding-block: var(--space-xl) var(--space-3xl); }
+.hero-copy { grid-area: copy; align-self: center; display: grid; gap: var(--space-lg); justify-items: start; }
 .hero h1 { font-size: var(--text-hero); max-width: 11ch; line-height: 1.0; }
 .lede { font-size: var(--text-lead); color: var(--color-ink-2); max-width: var(--measure-lede); }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-lg); margin-top: var(--space-xs); }
@@ -42,7 +43,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 
 /* The map */
 .map-area { grid-area: map; min-width: 0; }
-.map { display: none; position: relative; aspect-ratio: 5 / 4; }
+.map { display: none; position: relative; aspect-ratio: 16 / 10; }
 .js .map { display: block; }
 .js .log { display: none; }
 .map-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
@@ -64,12 +65,14 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 .log { display: grid; gap: var(--space-md); margin: 0; padding-left: var(--space-lg); max-width: 60ch; }
 
 /* The readout */
-.panel { grid-area: panel; display: grid; align-content: start; gap: var(--space-sm); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); max-width: 32rem; }
-.panel-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-xs) var(--space-sm); }
+.panel { grid-area: panel; display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); grid-template-areas: "photo head" "photo line" "photo controls"; grid-template-rows: auto 1fr auto; align-content: start; gap: var(--space-sm) var(--space-lg); padding-top: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
+.panel-photo { grid-area: photo; align-self: start; margin: 0; overflow: hidden; border-radius: var(--radius-card); background: var(--color-paper-2); }
+.panel-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.panel-head { grid-area: head; display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-xs) var(--space-sm); }
 .panel-year { font-family: var(--font-outlier); font-size: var(--text-2xl); line-height: 1; font-variant-numeric: tabular-nums; }
 .panel-where { color: var(--color-ink-2); }
-.panel-line { font-size: var(--text-lead); min-height: 3lh; max-width: 34ch; }
-.panel-controls { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+.panel-line { grid-area: line; font-size: var(--text-lg); line-height: 1.45; min-height: 3lh; max-width: 34ch; }
+.panel-controls { grid-area: controls; display: flex; flex-wrap: wrap; gap: var(--space-sm); }
 
 /* Sections */
 .section { padding-block: var(--section-gap); }
@@ -102,6 +105,9 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 .elsewhere { display: flex; flex-wrap: wrap; gap: var(--space-lg); margin: 0; padding: 0; list-style: none; }
 .elsewhere a { text-decoration: underline; text-underline-offset: 0.2em; transition: color var(--dur-short) var(--ease-out); }
 .elsewhere a:hover { color: var(--color-accent); }
+.credits { font-size: var(--text-xs); color: var(--color-night-ink-2); max-width: 90ch; padding-bottom: var(--space-lg); }
+.credits a { color: inherit; text-underline-offset: 0.2em; transition: color var(--dur-short) var(--ease-out); }
+.credits a:hover { color: var(--color-accent); }
 .colophon { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-sm); padding-block: var(--space-lg); border-top: var(--rule-hair) solid var(--color-ink-2); font-size: var(--text-sm); color: var(--color-night-ink-2); }
 
 /* Mid widths */
@@ -122,7 +128,9 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 @media (max-width: 40rem) {
   .map { aspect-ratio: 6 / 7; }
   .node, .row-label { font-size: var(--text-xs); }
-  .panel-line { min-height: 2lh; font-size: var(--text-md); }
+  .panel { grid-template-areas: "photo head" "photo line" "controls controls"; grid-template-rows: auto 1fr auto; gap: var(--space-sm) var(--space-md); }
+  .panel-line { min-height: 4lh; font-size: var(--text-sm); }
+  .panel-year { font-size: var(--text-xl); }
   .control { padding-inline: var(--space-sm); }
   .principles { grid-template-columns: minmax(0, 1fr); }
   .hero h1 { max-width: 14ch; }
