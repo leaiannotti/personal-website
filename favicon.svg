@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Leandro Iannotti">
-  <rect width="64" height="64" rx="6" fill="#f4d23c"/>
-  <rect x="10" y="30" width="44" height="4" fill="#15191f"/>
-  <rect x="8" y="26" width="12" height="12" fill="#15191f"/>
-  <rect x="44" y="26" width="12" height="12" fill="#f4d23c" stroke="#15191f" stroke-width="4"/>
+  <rect width="64" height="64" rx="14" fill="#f4d23c"/>
+  <path d="M32 5 C 37 8, 39 12, 38 16 C 42 19, 42 25, 40 28 C 44 32, 43 39, 39 42 C 36 45, 28 45, 25 42 C 21 39, 20 32, 24 28 C 22 25, 22 19, 26 16 C 25 12, 27 8, 32 5 Z" fill="#15191f"/>
+  <rect x="29.5" y="40" width="5" height="16" rx="1" fill="#15191f"/>
+  <rect x="18" y="54.5" width="28" height="3.5" rx="1.75" fill="#15191f"/>
 </svg>
