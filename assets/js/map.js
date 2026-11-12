@@ -187,7 +187,17 @@
   const lineEl = panel.querySelector("[data-panel-line]");
   const prev = panel.querySelector("[data-prev]");
   const next = panel.querySelector("[data-next]");
-  const play = panel.querySelector("[data-play]");
+  // Two play buttons, one beside "Say hello" and one in the readout, always in the same state.
+  const plays = [...document.querySelectorAll("[data-play]")];
+  const setPlaying = (on) => {
+    plays.forEach((button) => {
+      button.setAttribute("aria-pressed", String(on));
+      const label = button.querySelector("[data-play-label]");
+      if (label) label.textContent = on ? T.pause : T.play;
+      const icon = button.querySelector("[data-icon] path");
+      if (icon && ICONS.play) icon.setAttribute("d", on ? ICONS.pause : ICONS.play);
+    });
+  };
 
   let current = 0;
   let timer = null;
@@ -270,15 +280,13 @@
   function stop() {
     if (timer) window.clearInterval(timer);
     timer = null;
-    play.setAttribute("aria-pressed", "false");
-    play.textContent = T.play;
+    setPlaying(false);
   }
 
-  function start() {
-    if (current >= connections.length - 1) select(0);
+  function start({ fromStart = false } = {}) {
+    if (fromStart || current >= connections.length - 1) select(0);
     else select(current + 1);
-    play.setAttribute("aria-pressed", "true");
-    play.textContent = T.pause;
+    setPlaying(true);
     timer = window.setInterval(() => {
       if (current >= connections.length - 1) {
         stop();
@@ -296,7 +304,25 @@
     stop();
     if (current < connections.length - 1) select(current + 1);
   });
-  play.addEventListener("click", () => (timer ? stop() : start()));
+  plays.forEach((button) =>
+    button.addEventListener("click", () => {
+      if (timer) {
+        stop();
+        return;
+      }
+      // From the hero on a phone the map sits below the fold: bring it into view first.
+      if (button.hasAttribute("data-play-scroll")) {
+        const box = map.getBoundingClientRect();
+        if (box.top < 0 || box.bottom > window.innerHeight) {
+          map.scrollIntoView({ block: "center", behavior: reduceMotion.matches ? "auto" : "smooth" });
+          setPlaying(true);
+          window.setTimeout(() => start({ fromStart: true }), reduceMotion.matches ? 0 : 500);
+          return;
+        }
+      }
+      start({ fromStart: button.hasAttribute("data-play-scroll") });
+    })
+  );
 
   // The route draws itself once, and each station appears as the line reaches it.
   function drawIn() {

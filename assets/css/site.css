@@ -183,7 +183,8 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 .contact-save { grid-area: save; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-lg); }
 .contact-hint { font-size: var(--text-sm); color: var(--color-night-ink-2); }
 .button, .chip { gap: var(--space-xs); }
-.button [data-icon] svg, .chip [data-icon] svg { display: block; width: var(--icon-chip); height: var(--icon-chip); fill: currentColor; }
+.control { gap: var(--space-xs); }
+.button [data-icon] svg, .chip [data-icon] svg, .control [data-icon] svg { display: block; width: var(--icon-chip); height: var(--icon-chip); fill: currentColor; }
 .contact-cards { grid-area: cards; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--space-md); margin: 0; padding: 0; list-style: none; }
 .contact-cards > li { grid-column: span 2; display: grid; }
 .contact-cards > .contact-card-wide { grid-column: span 3; }
