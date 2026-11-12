@@ -119,6 +119,18 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 .plate img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-card); background: var(--color-plate); box-shadow: inset 0 0 0 var(--rule-hair) var(--color-rule); }
 .plate figcaption { font-size: var(--text-sm); color: var(--color-muted); }
 
+/* Illustrations: the light drawing on paper, its dark twin with light ink and no paper */
+[data-art="dark"] { display: none; }
+[data-mode="dark"] [data-art="light"] { display: none; }
+[data-mode="dark"] [data-art="dark"] { display: block; }
+.plate [data-art="dark"] { mask-image: linear-gradient(to right, transparent, var(--color-ink) 8%, var(--color-ink) 92%, transparent), linear-gradient(to bottom, var(--color-ink) 85%, transparent); mask-composite: intersect; }
+[data-mode="dark"] .plate img, [data-mode="dark"] .hello-portrait { background: none; box-shadow: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-mode]) [data-art="light"] { display: none; }
+  :root:not([data-mode]) [data-art="dark"] { display: block; }
+  :root:not([data-mode]) .plate img, :root:not([data-mode]) .hello-portrait { background: none; box-shadow: none; }
+}
+
 /* The route down the page */
 .page-route { position: absolute; top: 0; left: 0; width: 100%; pointer-events: none; z-index: var(--z-raised); overflow: visible; }
 .page-route path { fill: none; stroke: var(--color-rule); stroke-width: var(--route-w); stroke-linecap: round; stroke-linejoin: round; transition: stroke-dashoffset var(--route-ease-dur) var(--ease-out); }
