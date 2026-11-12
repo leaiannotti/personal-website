@@ -56,8 +56,9 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 .hello-portrait { width: var(--hello-portrait); height: var(--hello-portrait); flex-shrink: 0; border-radius: var(--radius-pill); background: var(--color-plate); box-shadow: inset 0 0 0 var(--rule-hair) var(--color-rule); }
 .hello-line { font-family: var(--font-display); font-weight: 600; font-size: var(--text-2xl); letter-spacing: var(--tracking-display); line-height: 1.1; }
 .hello-name { position: relative; display: inline-block; }
+.hello-aka { display: block; margin-top: var(--space-2xs); font-family: var(--font-body); font-weight: 400; font-size: var(--text-md); letter-spacing: 0; color: var(--color-ink-2); }
 .scribble { position: absolute; left: -2%; bottom: -0.18em; width: 104%; height: 0.42em; overflow: visible; z-index: -1; }
-.scribble path { fill: none; stroke: var(--color-accent); stroke-width: 9; stroke-linecap: round; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.scribble path { fill: none; stroke: var(--color-accent); stroke-width: var(--scribble-w); stroke-linecap: round; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; }
 .lede { font-size: var(--text-lead); color: var(--color-ink-2); max-width: var(--measure-lede); }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-lg); margin-top: var(--space-xs); }
 
@@ -116,7 +117,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 .journey-row-flip { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
 .journey-text { display: grid; gap: var(--space-md); }
 .journey-text h3 { font-size: var(--text-3xl); max-width: 16ch; }
-.journey-text p { font-size: var(--text-lead); color: var(--color-ink-2); max-width: 42ch; }
+.journey-text p { font-size: var(--text-lead); color: var(--color-ink-2); max-width: 46ch; }
 .plate { margin: 0; display: grid; gap: var(--space-sm); }
 .plate img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-card); background: var(--color-plate); box-shadow: inset 0 0 0 var(--rule-hair) var(--color-rule); }
 .plate figcaption { font-size: var(--text-sm); color: var(--color-muted); }
@@ -206,6 +207,7 @@ a.contact-value:hover, .contact-link:hover .contact-value { text-decoration: und
 @keyframes scribble { to { stroke-dashoffset: 0; } }
 @keyframes settle { from { opacity: 0; transform: translateY(var(--reveal-rise)); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
   .hero-copy > * { animation: settle var(--reveal-dur) var(--ease-out) backwards; animation-delay: calc(var(--i, 0) * var(--reveal-step)); }
   .scribble path { stroke-dashoffset: 1; animation: scribble var(--reveal-dur) var(--ease-out) 600ms forwards; }
   .js [data-reveal] .plate img { clip-path: inset(0 100% 0 0 round var(--radius-card)); transition: clip-path var(--band-dur) var(--ease-out); transition-delay: calc(var(--i, 0) * var(--reveal-step) + 150ms); }
@@ -242,7 +244,8 @@ a.contact-value:hover, .contact-link:hover .contact-value { text-decoration: und
   .nav-end { gap: var(--space-sm); }
   .wordmark { font-size: var(--text-md); }
   .hello-line { font-size: var(--text-xl); }
-  :root { --stop-size: 14px; --route-w: 4px; }
+  .hello-aka { font-size: var(--text-sm); }
+  :root { --stop-size: 14px; --route-w: 4px; --scribble-w: 3.5; }
   .container { padding-left: calc(var(--gutter) + var(--space-sm)); }
   .journey { gap: var(--space-2xl); }
   .map { aspect-ratio: 5 / 7; --station: 40px; --station-icon: 20px; }
