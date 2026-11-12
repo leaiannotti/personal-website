@@ -21,7 +21,7 @@
   --tracking-display: -0.025em;
   --text-hero: clamp(2.75rem, 5vw + 0.5rem, 6rem); --text-statement: clamp(2.25rem, 2.6vw + 1.25rem, 4rem); --text-email: clamp(1.125rem, 1.6vw + 0.75rem, 2.25rem);
   --reveal-rise: 28px; --reveal-dur: 700ms; --reveal-step: 90ms; --band-inset: 4%; --band-dur: 1000ms; --route-draw: 1600ms;
-  --nav-height: 72px; --control-height: 48px; --marker: 12px; --measure-lede: 34ch; --station: 48px; --station-icon: 24px; --packet: 18px; --avatar: 96px; --icon-ui: 16px; --lang-dot: 36px; --flag: 24px; --switch-w: 60px; --switch-h: 32px; --knob: 26px; --hello-portrait: 72px; --route-w: 6px; --stop-size: 18px; --poplar-mark: 112px; --poplar-mark-s: 72px;
+  --nav-height: 72px; --control-height: 48px; --marker: 12px; --measure-lede: 34ch; --station: 48px; --station-icon: 24px; --packet: 18px; --avatar: 96px; --icon-ui: 16px; --lang-dot: 36px; --flag: 24px; --switch-w: 60px; --switch-h: 32px; --knob: 26px; --hello-portrait: 72px; --route-w: 6px; --route-ease-dur: 600ms; --stop-size: 18px; --poplar-mark: 112px; --poplar-mark-s: 72px;
 }
 
 [data-mode="dark"] {

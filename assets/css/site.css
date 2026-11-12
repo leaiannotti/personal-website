@@ -121,7 +121,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 
 /* The route down the page */
 .page-route { position: absolute; top: 0; left: 0; width: 100%; pointer-events: none; z-index: var(--z-raised); overflow: visible; }
-.page-route path { fill: none; stroke: var(--color-rule); stroke-width: var(--route-w); stroke-linecap: round; stroke-linejoin: round; }
+.page-route path { fill: none; stroke: var(--color-rule); stroke-width: var(--route-w); stroke-linecap: round; stroke-linejoin: round; transition: stroke-dashoffset var(--route-ease-dur) var(--ease-out); }
 .route-stop { position: absolute; left: var(--x); top: var(--y); z-index: var(--z-raised); width: var(--stop-size); height: var(--stop-size); margin: calc(var(--stop-size) / -2) 0 0 calc(var(--stop-size) / -2); border: var(--rule-route) solid var(--color-ink); border-radius: var(--radius-pill); background: var(--color-paper); pointer-events: none; transition: background-color var(--dur-long) var(--ease-out), scale var(--dur-long) var(--ease-out); }
 .route-stop.is-reached { background: var(--color-accent); scale: 1.15; }
 
@@ -216,7 +216,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 
 @media (prefers-reduced-motion: reduce) {
   .button, .button:active, .control, .control:active { transition: none; transform: none; }
-  .lang-ring, .lang-option img, .mode-track, .mode-knob, .route-stop { transition: none; }
+  .lang-ring, .lang-option img, .mode-track, .mode-knob, .route-stop, .page-route path { transition: none; }
   .node:active { transform: translate(-50%, -50%); }
   .milestone, .node { transition: none; }
   .nav-links a, .text-link, .email, .elsewhere a, .edge { transition: none; }

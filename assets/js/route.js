@@ -29,6 +29,7 @@
   let samples = [];
   let length = 0;
   let stopYs = [];
+  let lead = 0;
   let ticking = false;
 
   const page = (rect) => ({ x: rect.left + window.scrollX, y: rect.top + window.scrollY, w: rect.width, h: rect.height });
@@ -49,11 +50,19 @@
     const t = page(tag.getBoundingClientRect());
     const sx = t.x + t.w / 2;
     const sy = t.y + t.h;
+    // At the top of the page nothing is drawn yet: the line starts growing from "Now" with the first scroll.
+    lead = Math.max(0, window.innerHeight * 0.72 - sy);
     const first = page(stations[0].getBoundingClientRect());
     const readout = document.querySelector("[data-panel]");
     // On a phone the readout sits under the map, so the route leaves for the edge right after "Now".
-    const stacked = readout && page(readout.getBoundingClientRect()).y > t.y;
-    const turnY = stacked ? sy + Math.max(24, r * 2) : first.y - Math.max(48, gutter * 1.5);
+    const mapBox = page(tag.parentElement.getBoundingClientRect());
+    const stacked = readout && page(readout.getBoundingClientRect()).x + 1 >= mapBox.x;
+    // Otherwise it turns in the free band between the hero's lowest content and the next section.
+    const heroBottom = Math.max(
+      page(readout.getBoundingClientRect()).y + readout.offsetHeight,
+      page(tag.parentElement.getBoundingClientRect()).y + tag.parentElement.offsetHeight
+    );
+    const turnY = stacked ? sy + Math.max(24, r * 2) : heroBottom + (first.y - heroBottom) * 0.4;
     const photo = page(end.getBoundingClientRect());
     const ey = photo.y + photo.h / 2;
     const ex = photo.x;
@@ -90,13 +99,14 @@
 
   function update() {
     ticking = false;
-    const tip = reduceMotion.matches ? Infinity : window.scrollY + window.innerHeight * 0.72;
+    const tip = reduceMotion.matches ? Infinity : window.scrollY + window.innerHeight * 0.72 - lead;
     let drawn = length;
     if (tip !== Infinity) {
-      const hit = samples.find((s) => s.y > tip);
+      const hit = samples.find((s) => s.y >= tip);
       drawn = hit ? hit.l : length;
     }
     path.style.strokeDashoffset = `${length - drawn}`;
+    path.style.visibility = drawn < 1 ? "hidden" : "visible";
     stopYs.forEach((y, i) => dots[i].classList.toggle("is-reached", y <= tip));
   }
 
