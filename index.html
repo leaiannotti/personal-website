@@ -31,6 +31,8 @@
   <script src="assets/js/icons.js" defer></script>
   <script src="assets/js/site.js" defer></script>
   <script src="assets/js/map.js" defer></script>
+  <script src="assets/js/route.js" defer></script>
+  <link rel="prefetch" href="es/">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Person","name":"Leandro Iannotti","jobTitle":"Senior Software Engineer","url":"https://leandroiannotti.com/","address":{"@type":"PostalAddress","addressLocality":"Auckland","addressCountry":"NZ"},"sameAs":["https://www.linkedin.com/in/leandro-iannotti/","https://github.com/leaiannotti"]}
   </script>
@@ -41,20 +43,25 @@
     <div class="nav-end">
       <nav aria-label="Sections">
         <ul class="nav-links">
+          <li><a href="#path">Story</a></li>
           <li><a href="#approach">Approach</a></li>
           <li><a href="#now">Now</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <a class="lang-link" href="es/" hreflang="es" lang="es">Español</a>
-      <button class="icon-button" type="button" data-mode-toggle data-to-dark="Switch to dark mode" data-to-light="Switch to light mode" aria-label="Switch colour mode"></button>
+      <nav class="lang-switch" data-lang-switch data-current="en" aria-label="Language">
+        <a class="lang-option" href="es/" hreflang="es" lang="es" aria-label="Español" title="Español"><img src="assets/img/flags/ar.svg" width="24" height="24" alt=""></a>
+        <a class="lang-option" href="./" hreflang="en" aria-current="page" aria-label="English" title="English"><img src="assets/img/flags/nz.svg" width="24" height="24" alt=""></a>
+        <span class="lang-ring" aria-hidden="true"></span>
+      </nav>
+      <button class="mode-switch" type="button" role="switch" aria-checked="false" aria-label="Dark mode" title="Dark mode" data-mode-toggle><span class="mode-track" aria-hidden="true"><span class="mode-knob"></span></span></button>
     </div>
   </header>
 
   <main id="top">
     <section class="container hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <h1 id="hero-title" style="--i: 0">I make systems talk to each other.</h1>
+        <h1 id="hero-title" style="--i: 0"><span class="hello"><img class="hello-portrait" src="assets/img/illustrations/portrait.webp" width="640" height="640" alt="" fetchpriority="high"><span class="hello-line">Hi, I’m <span class="hello-name">Leandro<svg class="scribble" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 52 6, 124 5, 197 11" pathLength="1"/></svg></span>.</span></span> <span class="hero-claim">I make systems talk to each other.</span></h1>
         <p class="lede" style="--i: 1">Senior software engineer and tech lead in Auckland. Tap the map.</p>
         <div class="actions" style="--i: 2">
           <a class="button" href="mailto:leandro.iannotti@gmail.com">Email me</a>
@@ -87,8 +94,32 @@
       </div>
     </section>
 
+    <section class="container section journey" id="path" aria-labelledby="path-title" data-reveal>
+      <h2 class="section-head reveal-item" id="path-title" data-station>Two cities, two bridges</h2>
+      <div class="journey-row reveal-item">
+        <div class="journey-text">
+          <h3 data-station>Buenos Aires is where it started</h3>
+          <p>I studied Computer Science at the University of Buenos Aires and spent my first years building maps, warehouse systems and the links between them.</p>
+        </div>
+        <figure class="plate">
+          <img src="assets/img/illustrations/buenos-aires.webp" width="960" height="720" alt="Line drawing of the Puente Transbordador over the Riachuelo in La Boca, its hanging gondola in yellow" loading="lazy">
+          <figcaption>Puente Transbordador, La Boca</figcaption>
+        </figure>
+      </div>
+      <div class="journey-row journey-row-flip reveal-item">
+        <figure class="plate">
+          <img src="assets/img/illustrations/auckland.webp" width="960" height="720" alt="Line drawing of the Auckland Harbour Bridge with a yellow sailboat on the water" loading="lazy">
+          <figcaption>Harbour Bridge, Auckland</figcaption>
+        </figure>
+        <div class="journey-text">
+          <h3 data-station>Auckland has been home since 2019</h3>
+          <p>Logistics software at Sandfield, rental software at Renti, and now Poplar Labs, a studio of my own.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="container section approach" id="approach" aria-labelledby="approach-title" data-reveal>
-      <h2 class="statement reveal-item" id="approach-title">First the business, then the code.</h2>
+      <h2 class="statement reveal-item" id="approach-title" data-station>First the business, then the code.</h2>
       <ul class="principles">
         <li class="reveal-item">Monolith to services, one step at a time</li>
         <li class="reveal-item">Integrations that are wired and watched</li>
@@ -99,7 +130,7 @@
 
     <section class="now section band" id="now" aria-labelledby="now-title" data-reveal>
       <div class="container">
-        <h2 class="section-head reveal-item" id="now-title">What I am working on now</h2>
+        <h2 class="section-head reveal-item" id="now-title" data-station>What I am working on now</h2>
         <div class="now-grid">
           <article class="now-item reveal-item">
             <h3>Renti</h3>
@@ -123,7 +154,7 @@
   <footer class="night band" id="contact" data-reveal>
     <div class="container contact">
       <div class="contact-head reveal-item">
-        <img class="contact-photo" src="assets/img/leandro.jpg" width="880" height="880" alt="Leandro Iannotti" loading="lazy">
+        <img class="contact-photo" data-route-end src="assets/img/leandro.jpg" width="880" height="880" alt="Leandro Iannotti" loading="lazy">
         <h2 class="section-head">Coffee in Auckland, or a call from anywhere</h2>
       </div>
       <a class="email reveal-item" href="mailto:leandro.iannotti@gmail.com">leandro.iannotti@gmail.com</a>

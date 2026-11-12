@@ -5,21 +5,22 @@
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  // Light and dark mode
+  // Light and dark mode: a switch whose knob carries the sun or the moon
   const toggle = document.querySelector("[data-mode-toggle]");
   if (toggle) {
+    const knob = toggle.querySelector(".mode-knob");
     const icon = document.createElementNS(SVG_NS, "svg");
     icon.setAttribute("viewBox", "0 0 256 256");
     icon.setAttribute("aria-hidden", "true");
     const path = document.createElementNS(SVG_NS, "path");
     icon.append(path);
-    toggle.append(icon);
+    knob.append(icon);
 
     const current = () => root.dataset.mode || (prefersDark.matches ? "dark" : "light");
     const paint = () => {
       const dark = current() === "dark";
-      path.setAttribute("d", dark ? ICONS.sun : ICONS.moon);
-      toggle.setAttribute("aria-label", dark ? toggle.dataset.toLight : toggle.dataset.toDark);
+      path.setAttribute("d", dark ? ICONS.moon : ICONS.sun);
+      toggle.setAttribute("aria-checked", String(dark));
     };
     toggle.addEventListener("click", () => {
       const next = current() === "dark" ? "light" : "dark";
@@ -31,6 +32,19 @@
     });
     prefersDark.addEventListener("change", paint);
     paint();
+  }
+
+  // Language: the ring slides to the other flag, then the page changes
+  const langSwitch = document.querySelector("[data-lang-switch]");
+  if (langSwitch) {
+    langSwitch.querySelectorAll("a:not([aria-current])").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || reduceMotion.matches) return;
+        event.preventDefault();
+        langSwitch.classList.add("is-switching");
+        window.setTimeout(() => (window.location.href = link.href), 260);
+      });
+    });
   }
 
   // Sections rise in as they enter the screen; tinted bands open from a card to full width.

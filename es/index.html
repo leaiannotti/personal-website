@@ -31,6 +31,8 @@
   <script src="../assets/js/icons.js" defer></script>
   <script src="../assets/js/site.js" defer></script>
   <script src="../assets/js/map.js" defer></script>
+  <script src="../assets/js/route.js" defer></script>
+  <link rel="prefetch" href="../">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Person","name":"Leandro Iannotti","jobTitle":"Ingeniero de software senior","url":"https://leandroiannotti.com/es/","address":{"@type":"PostalAddress","addressLocality":"Auckland","addressCountry":"NZ"},"sameAs":["https://www.linkedin.com/in/leandro-iannotti/","https://github.com/leaiannotti"]}
   </script>
@@ -41,21 +43,26 @@
     <div class="nav-end">
       <nav aria-label="Secciones">
         <ul class="nav-links">
+          <li><a href="#historia">Historia</a></li>
           <li><a href="#enfoque">Enfoque</a></li>
           <li><a href="#ahora">Ahora</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <a class="lang-link" href="../" hreflang="en" lang="en">English</a>
-      <button class="icon-button" type="button" data-mode-toggle data-to-dark="Cambiar a modo oscuro" data-to-light="Cambiar a modo claro" aria-label="Cambiar el modo de color"></button>
+      <nav class="lang-switch" data-lang-switch data-current="es" aria-label="Idioma">
+        <a class="lang-option" href="./" hreflang="es" aria-current="page" aria-label="Español" title="Español"><img src="../assets/img/flags/ar.svg" width="24" height="24" alt=""></a>
+        <a class="lang-option" href="../" hreflang="en" lang="en" aria-label="English" title="English"><img src="../assets/img/flags/nz.svg" width="24" height="24" alt=""></a>
+        <span class="lang-ring" aria-hidden="true"></span>
+      </nav>
+      <button class="mode-switch" type="button" role="switch" aria-checked="false" aria-label="Modo oscuro" title="Modo oscuro" data-mode-toggle><span class="mode-track" aria-hidden="true"><span class="mode-knob"></span></span></button>
     </div>
   </header>
 
   <main id="top">
     <section class="container hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <h1 id="hero-title" style="--i: 0">Hago que los sistemas hablen entre sí.</h1>
-        <p class="lede" style="--i: 1">Ingeniero de software senior y tech lead en Auckland. El mapa es interactivo.</p>
+        <h1 id="hero-title" style="--i: 0"><span class="hello"><img class="hello-portrait" src="../assets/img/illustrations/portrait.webp" width="640" height="640" alt="" fetchpriority="high"><span class="hello-line">Hola, soy <span class="hello-name">Leandro<svg class="scribble" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 52 6, 124 5, 197 11" pathLength="1"/></svg></span>.</span></span> <span class="hero-claim">Hago que los sistemas hablen entre sí.</span></h1>
+        <p class="lede" style="--i: 1">Ingeniero de software senior y tech lead en Auckland. Explora el mapa.</p>
         <div class="actions" style="--i: 2">
           <a class="button" href="mailto:leandro.iannotti@gmail.com">Enviar un email</a>
           <a class="text-link" href="https://www.linkedin.com/in/leandro-iannotti/">LinkedIn</a>
@@ -87,8 +94,32 @@
       </div>
     </section>
 
+    <section class="container section journey" id="historia" aria-labelledby="path-title" data-reveal>
+      <h2 class="section-head reveal-item" id="path-title" data-station>Dos ciudades, dos puentes</h2>
+      <div class="journey-row reveal-item">
+        <div class="journey-text">
+          <h3 data-station>Todo empezó en Buenos Aires</h3>
+          <p>Estudié Ciencias de la Computación en la Universidad de Buenos Aires y pasé mis primeros años construyendo mapas, sistemas de depósitos y las conexiones entre ellos.</p>
+        </div>
+        <figure class="plate">
+          <img src="../assets/img/illustrations/buenos-aires.webp" width="960" height="720" alt="Dibujo en línea del Puente Transbordador sobre el Riachuelo, en La Boca, con su barquilla en amarillo" loading="lazy">
+          <figcaption>Puente Transbordador, La Boca</figcaption>
+        </figure>
+      </div>
+      <div class="journey-row journey-row-flip reveal-item">
+        <figure class="plate">
+          <img src="../assets/img/illustrations/auckland.webp" width="960" height="720" alt="Dibujo en línea del Harbour Bridge de Auckland con un velero amarillo en el agua" loading="lazy">
+          <figcaption>Harbour Bridge, Auckland</figcaption>
+        </figure>
+        <div class="journey-text">
+          <h3 data-station>Auckland es mi casa desde 2019</h3>
+          <p>Software de logística en Sandfield, software de alquileres en Renti y ahora Poplar Labs, un estudio propio.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="container section approach" id="enfoque" aria-labelledby="approach-title" data-reveal>
-      <h2 class="statement reveal-item" id="approach-title">Primero el negocio, después el código.</h2>
+      <h2 class="statement reveal-item" id="approach-title" data-station>Primero el negocio, después el código.</h2>
       <ul class="principles">
         <li class="reveal-item">De monolito a servicios, paso a paso</li>
         <li class="reveal-item">Integraciones bien conectadas y monitoreadas</li>
@@ -99,7 +130,7 @@
 
     <section class="now section band" id="ahora" aria-labelledby="now-title" data-reveal>
       <div class="container">
-        <h2 class="section-head reveal-item" id="now-title">En qué estoy trabajando</h2>
+        <h2 class="section-head reveal-item" id="now-title" data-station>En qué estoy trabajando</h2>
         <div class="now-grid">
           <article class="now-item reveal-item">
             <h3>Renti</h3>
@@ -123,7 +154,7 @@
   <footer class="night band" id="contacto" data-reveal>
     <div class="container contact">
       <div class="contact-head reveal-item">
-        <img class="contact-photo" src="../assets/img/leandro.jpg" width="880" height="880" alt="Leandro Iannotti" loading="lazy">
+        <img class="contact-photo" data-route-end src="../assets/img/leandro.jpg" width="880" height="880" alt="Leandro Iannotti" loading="lazy">
         <h2 class="section-head">Un café en Auckland o una llamada desde cualquier lugar</h2>
       </div>
       <a class="email reveal-item" href="mailto:leandro.iannotti@gmail.com">leandro.iannotti@gmail.com</a>
