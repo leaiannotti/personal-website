@@ -34,16 +34,28 @@
 
   const page = (rect) => ({ x: rect.left + window.scrollX, y: rect.top + window.scrollY, w: rect.width, h: rect.height });
 
+  // Layout position without transforms: the reveal animation shifts sections down until they
+  // arrive, and the route must aim at where they land, not where they start.
+  const settled = (el) => {
+    let x = 0;
+    let y = 0;
+    for (let node = el; node; node = node.offsetParent) {
+      x += node.offsetLeft;
+      y += node.offsetTop;
+    }
+    return { x, y, w: el.offsetWidth, h: el.offsetHeight };
+  };
+
   function layout() {
     const tag = start();
     if (!tag) return;
     const footer = document.querySelector("footer");
-    const H = footer ? page(footer.getBoundingClientRect()).y + footer.offsetHeight : document.body.offsetHeight;
+    const H = footer ? settled(footer).y + footer.offsetHeight : document.body.offsetHeight;
     const W = document.documentElement.clientWidth;
     svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
     svg.style.height = `${H}px`;
 
-    const box = page(container.getBoundingClientRect());
+    const box = settled(container);
     const gutter = parseFloat(getComputedStyle(container).paddingLeft) || 32;
     const x = box.x + gutter / 2;
     const r = Math.min(40, gutter);
@@ -52,23 +64,23 @@
     const sy = t.y + t.h;
     // At the top of the page nothing is drawn yet: the line starts growing from "Now" with the first scroll.
     lead = Math.max(0, window.innerHeight * 0.72 - sy);
-    const first = page(stations[0].getBoundingClientRect());
+    const first = settled(stations[0]);
     const readout = document.querySelector("[data-panel]");
     // On a phone the readout sits under the map, so the route leaves for the edge right after "Now".
     const mapBox = page(tag.parentElement.getBoundingClientRect());
-    const stacked = readout && page(readout.getBoundingClientRect()).x + 1 >= mapBox.x;
+    const stacked = readout && settled(readout).x + 1 >= mapBox.x;
     // Otherwise it turns in the free band between the hero's lowest content and the next section.
     const heroBottom = Math.max(
-      page(readout.getBoundingClientRect()).y + readout.offsetHeight,
+      settled(readout).y + readout.offsetHeight,
       page(tag.parentElement.getBoundingClientRect()).y + tag.parentElement.offsetHeight
     );
     const turnY = stacked ? sy + Math.max(24, r * 2) : heroBottom + (first.y - heroBottom) * 0.4;
-    const photo = page(end.getBoundingClientRect());
+    const photo = settled(end);
     const ey = photo.y + photo.h / 2;
     const ex = photo.x;
 
     stopYs = stations.map((s) => {
-      const b = page(s.getBoundingClientRect());
+      const b = settled(s);
       return b.y + Math.min(b.h / 2, 28);
     });
     stopYs.forEach((y, i) => {
