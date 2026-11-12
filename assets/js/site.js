@@ -84,6 +84,54 @@
     });
   }
 
+  // "First the code, then the business" corrects itself: the two words trade places in an arc
+  const swap = document.querySelector("[data-swap]");
+  if (swap && "IntersectionObserver" in window && !reduceMotion.matches) {
+    const first = swap.querySelector('[data-swap-word="first"]');
+    const second = swap.querySelector('[data-swap-word="second"]');
+    const trade = () => {
+      const a = document.createComment("");
+      const b = document.createComment("");
+      first.replaceWith(a);
+      second.replaceWith(b);
+      a.replaceWith(second);
+      b.replaceWith(first);
+    };
+    const arc = (el, from, to, lift) => {
+      const dx = from.left - to.left;
+      const dy = from.top - to.top;
+      el.animate(
+        [
+          { transform: `translate(${dx}px, ${dy}px)` },
+          { transform: `translate(${dx / 2}px, ${dy / 2 + lift}px)`, offset: 0.5 },
+          { transform: "none" },
+        ],
+        { duration: 1100, easing: "cubic-bezier(0.65, 0, 0.35, 1)" }
+      );
+    };
+    trade();
+    swap.classList.add("is-wrong");
+    const play = () => {
+      const before = [first.getBoundingClientRect(), second.getBoundingClientRect()];
+      trade();
+      swap.classList.remove("is-wrong");
+      const after = [first.getBoundingClientRect(), second.getBoundingClientRect()];
+      const lift = parseFloat(getComputedStyle(swap).fontSize) * 0.55;
+      arc(first, before[0], after[0], -lift);
+      arc(second, before[1], after[1], lift);
+    };
+    const watch = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((e) => e.isIntersecting)) return;
+        watch.disconnect();
+        const ready = document.fonts ? document.fonts.ready : Promise.resolve();
+        ready.then(() => window.setTimeout(play, 1100));
+      },
+      { threshold: 0.9 }
+    );
+    watch.observe(swap);
+  }
+
   // Sections rise in as they enter the screen; tinted bands open from a card to full width.
   const sections = document.querySelectorAll("[data-reveal]");
   sections.forEach((section) => {

@@ -8,6 +8,7 @@
 /* Hallmark · answered F7 · the round radius sits on the language flags, their ring, the mode switch and the route stops, all controls or markers that are round by nature */
 /* Hallmark · waive 38iii · the yellow stroke under the name, once, in the hero · the owner asked for a personal greeting and the name is the only word set apart */
 /* Hallmark · answered F4 · two filled actions on the page, far apart: email in the hero, save my contact in the closing band, each the one action of its screen */
+/* Hallmark · answered F5 · the principle icons are route stations, the same ringed circles as the map, and they light up yellow as the reader reaches them */
 /* Hallmark · focus colour sits darker than the accent in light mode so the ring holds 3:1 on pale paper; the night band and dark mode use the accent */
 @import url("./tokens.css");
 @import url("./base.css");
@@ -142,7 +143,17 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 .approach { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl) var(--gap-columns); align-items: start; border-top: var(--rule-hair) solid var(--color-rule); }
 .statement { font-size: var(--text-statement); max-width: 11ch; }
 .principles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xl) var(--gap-columns); margin: 0; padding: 0; list-style: none; }
-.principles li { padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); font-size: var(--text-xl); line-height: 1.3; max-width: 20ch; text-wrap: balance; }
+.principles li { padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); font-size: var(--text-xl); line-height: 1.3; text-wrap: balance; }
+.principle { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--space-md); }
+.principle > span:last-child { max-width: 20ch; }
+.principle-icon { display: grid; place-items: center; width: var(--station); height: var(--station); border: var(--rule-route) solid var(--color-ink); border-radius: var(--radius-pill); background: var(--color-paper); color: var(--color-ink); transition: background-color var(--dur-long) var(--ease-out), color var(--dur-long) var(--ease-out); transition-delay: calc(var(--i, 0) * var(--reveal-step) + 500ms); }
+.principle-icon svg { width: var(--station-icon); height: var(--station-icon); fill: currentColor; }
+[data-reveal].is-in .principle-icon { background: var(--color-accent); color: var(--color-accent-ink); }
+
+/* The statement that corrects itself */
+.swap-slot { display: inline-block; white-space: nowrap; }
+.swap { display: inline-block; white-space: nowrap; }
+.is-wrong .swap { text-decoration: underline wavy var(--color-muted); text-decoration-thickness: 2px; text-underline-offset: 0.14em; text-decoration-skip-ink: none; }
 
 /* Now */
 .now { background: var(--color-paper-2); }
@@ -258,5 +269,6 @@ a.contact-value:hover, .contact-link:hover .contact-value { text-decoration: und
   .lang-ring, .lang-option img, .mode-track, .mode-knob, .route-stop, .page-route path { transition: none; }
   .node:active { transform: translate(-50%, -50%); }
   .milestone, .node { transition: none; }
+  .principle-icon { transition: none; }
   .nav-links a, .text-link, .edge, .chip, .chip:active, .contact-card, .contact-link:active { transition: none; transform: none; }
 }
