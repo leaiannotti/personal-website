@@ -34,6 +34,43 @@
     paint();
   }
 
+  // Icons named in the markup
+  document.querySelectorAll("[data-icon]").forEach((slot) => {
+    const d = ICONS[slot.dataset.icon];
+    if (!d) return;
+    const icon = document.createElementNS(SVG_NS, "svg");
+    icon.setAttribute("viewBox", "0 0 256 256");
+    icon.setAttribute("aria-hidden", "true");
+    const path = document.createElementNS(SVG_NS, "path");
+    path.setAttribute("d", d);
+    icon.append(path);
+    slot.append(icon);
+  });
+
+  // Copy the email: the label says Copied only when the clipboard took it
+  document.querySelectorAll("[data-copy]").forEach((button) => {
+    const label = button.querySelector("[data-copy-label]");
+    label.setAttribute("aria-live", "polite");
+    const original = label.textContent;
+    const iconPath = button.querySelector("[data-icon] path");
+    const reset = () => {
+      label.textContent = original;
+      if (iconPath) iconPath.setAttribute("d", ICONS.copy);
+      button.classList.remove("is-done");
+    };
+    button.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(button.dataset.copy);
+        label.textContent = button.dataset.copied;
+        if (iconPath) iconPath.setAttribute("d", ICONS.check);
+        button.classList.add("is-done");
+      } catch (e) {
+        label.textContent = button.dataset.copyFailed;
+      }
+      window.setTimeout(reset, 2200);
+    });
+  });
+
   // Language: the ring slides to the other flag, then the page changes
   const langSwitch = document.querySelector("[data-lang-switch]");
   if (langSwitch) {

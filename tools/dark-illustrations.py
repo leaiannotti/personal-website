@@ -22,7 +22,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent / "assets" / "img" / "illustrations"
 INK = np.array([232, 237, 240], dtype=np.float32)  # dark-mode --color-ink, oklch(94% 0.008 220)
-NAMES = ["buenos-aires", "auckland"]
+NAMES = ["buenos-aires", "auckland", "coffee"]
 
 
 def convert(name: str) -> None:

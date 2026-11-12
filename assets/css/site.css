@@ -7,6 +7,7 @@
 /* Hallmark · dismissed 77 · four sections on a one-person page; the career lives inside the hero map instead of its own band */
 /* Hallmark · answered F7 · the round radius sits on the language flags, their ring, the mode switch and the route stops, all controls or markers that are round by nature */
 /* Hallmark · waive 38iii · the yellow stroke under the name, once, in the hero · the owner asked for a personal greeting and the name is the only word set apart */
+/* Hallmark · answered F4 · two filled actions on the page, far apart: email in the hero, save my contact in the closing band, each the one action of its screen */
 /* Hallmark · focus colour sits darker than the accent in light mode so the ring holds 3:1 on pale paper; the night band and dark mode use the accent */
 @import url("./tokens.css");
 @import url("./base.css");
@@ -162,14 +163,32 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 
 /* Contact */
 .night { --color-focus: var(--color-accent); background: var(--color-night); color: var(--color-night-ink); }
-.contact { padding-block: var(--section-gap-s) var(--space-2xl); display: grid; gap: var(--space-xl); }
-.contact-head { display: flex; align-items: center; gap: var(--space-lg); }
-.contact .section-head { max-width: 16ch; }
-.email { font-family: var(--font-display); font-weight: 600; font-size: var(--text-email); letter-spacing: var(--tracking-display); line-height: 1.1; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.18em; white-space: nowrap; justify-self: start; transition: color var(--dur-short) var(--ease-out); }
-.email:hover { color: var(--color-accent); }
-.elsewhere { display: flex; flex-wrap: wrap; gap: var(--space-lg); margin: 0; padding: 0; list-style: none; }
-.elsewhere a { text-decoration: underline; text-underline-offset: 0.2em; transition: color var(--dur-short) var(--ease-out); }
-.elsewhere a:hover { color: var(--color-accent); }
+.contact { padding-block: var(--section-gap-s) var(--space-2xl); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-areas: "intro art" "save art" "cards cards"; gap: var(--space-xl) var(--space-2xl); align-items: start; }
+.contact-intro { grid-area: intro; align-self: end; display: grid; gap: var(--space-md); }
+.contact-title { font-size: var(--text-display); line-height: 1; }
+.contact-lede { font-size: var(--text-lead); color: var(--color-night-ink-2); max-width: 34ch; }
+.contact-art { grid-area: art; justify-self: end; width: 100%; max-width: var(--contact-art); margin: 0; }
+.contact-save { grid-area: save; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-lg); }
+.contact-hint { font-size: var(--text-sm); color: var(--color-night-ink-2); }
+.button, .chip { gap: var(--space-xs); }
+.button [data-icon] svg, .chip [data-icon] svg { display: block; width: var(--icon-chip); height: var(--icon-chip); fill: currentColor; }
+.contact-cards { grid-area: cards; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--space-md); margin: 0; padding: 0; list-style: none; }
+.contact-cards > li { grid-column: span 2; display: grid; }
+.contact-cards > .contact-card-wide { grid-column: span 3; }
+.contact-card { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "icon label" "icon value"; align-items: center; column-gap: var(--space-md); row-gap: var(--space-3xs); padding: var(--space-lg); border: var(--rule-hair) solid var(--color-night-rule); border-radius: var(--radius-card); color: var(--color-night-ink); text-decoration: none; transition: border-color var(--dur-short) var(--ease-out); }
+.contact-card-wide { grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "icon label actions" "icon value actions"; }
+.contact-icon { grid-area: icon; color: var(--color-accent); }
+.contact-icon svg { display: block; width: var(--icon-card); height: var(--icon-card); fill: currentColor; }
+.contact-label { grid-area: label; font-size: var(--text-sm); color: var(--color-night-ink-2); }
+.contact-value { grid-area: value; font-size: var(--text-lg); font-weight: 600; color: inherit; text-decoration: none; overflow-wrap: anywhere; }
+a.contact-value:hover, .contact-link:hover .contact-value { text-decoration: underline; text-underline-offset: 0.2em; }
+.contact-link:hover { border-color: var(--color-accent); }
+.contact-link:active { transform: translateY(1px); }
+.contact-actions { grid-area: actions; display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+.chip { display: inline-flex; align-items: center; min-height: var(--control-height); padding-inline: var(--space-md); border: var(--rule-hair) solid var(--color-night-ink-2); border-radius: var(--radius-card); background: transparent; color: var(--color-night-ink); font-weight: 600; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+.chip:hover { background: var(--color-night-ink); color: var(--color-night); }
+.chip:active { transform: translateY(1px); }
+.chip.is-done, .chip.is-done:hover { border-color: var(--color-accent); background: transparent; color: var(--color-accent); }
 .colophon { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-sm); padding-block: var(--space-lg); border-top: var(--rule-hair) solid var(--color-night-rule); font-size: var(--text-sm); color: var(--color-night-ink-2); }
 
 /* Motion: the hero settles once, sections rise in, tinted bands open to full width */
@@ -193,6 +212,9 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
   .approach { grid-template-columns: minmax(0, 1fr); }
   .statement { max-width: 16ch; }
   .now-grid { grid-template-columns: minmax(0, 1fr); }
+  .contact { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "art" "save" "cards"; }
+  .contact-art { justify-self: start; max-width: var(--contact-art-s); }
+  .contact-cards > .contact-card-wide { grid-column: span 6; }
   .journey-row, .journey-row-flip { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
   .journey-row-flip .plate { order: 2; }
 }
@@ -221,6 +243,13 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
   .principles { grid-template-columns: minmax(0, 1fr); }
   .hero h1 { max-width: 14ch; }
   .now-poplar { grid-template-columns: minmax(0, 1fr); padding: var(--space-lg); }
+  .contact-cards { grid-template-columns: minmax(0, 1fr); }
+  .contact-cards > li, .contact-cards > .contact-card-wide { grid-column: auto; }
+  .contact-card, .contact-card-wide { grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "icon label" "value value" "actions actions"; row-gap: var(--space-xs); padding: var(--space-md); }
+  .contact-icon svg { width: var(--icon-chip); height: var(--icon-chip); }
+  .contact-value { font-size: var(--text-md); }
+  .contact-actions { margin-top: var(--space-sm); }
+  .contact-title { font-size: var(--text-display-s); }
   .poplar-mark { width: var(--poplar-mark-s); }
 }
 
@@ -229,5 +258,5 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
   .lang-ring, .lang-option img, .mode-track, .mode-knob, .route-stop, .page-route path { transition: none; }
   .node:active { transform: translate(-50%, -50%); }
   .milestone, .node { transition: none; }
-  .nav-links a, .text-link, .email, .elsewhere a, .edge { transition: none; }
+  .nav-links a, .text-link, .edge, .chip, .chip:active, .contact-card, .contact-link:active { transition: none; transform: none; }
 }

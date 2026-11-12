@@ -13,7 +13,10 @@ A single static page: plain HTML and CSS, no build step, served by GitHub Pages 
 - `assets/css/tokens.css`: colours, type, spacing and sizes. Every colour and font goes through a token.
 - `assets/css/base.css`: base rules from the Hallmark scaffold.
 - `assets/css/site.css`: the page styles. Its first lines record the design decisions.
-- `assets/img/`: portrait, Poplar Labs mark (`poplar-mark.svg`) and the social preview (`og.jpg`, 1200 x 630).
+- `assets/img/illustrations/`: ink illustrations (portrait, Buenos Aires, Auckland, coffee and mate) and their `-dark` twins, made with `tools/dark-illustrations.py`.
+- `assets/img/`: Poplar Labs mark (`poplar-mark.svg`), flags and the social preview (`og.jpg`, 1200 x 630).
+- `assets/leandro-iannotti.vcf`: the contact card behind "Save my contact".
+- `assets/js/route.js`: the route line that draws itself down the page on scroll.
 
 ## Local preview
 
