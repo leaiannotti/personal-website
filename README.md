@@ -32,7 +32,7 @@ With the preview server running, install `puppeteer-core` in a separate test dir
 
 ```sh
 npm install --prefix /tmp/opencode/personal-site-tests puppeteer-core
-PUPPETEER_MODULE=/tmp/opencode/personal-site-tests/node_modules/puppeteer-core/lib/esm/puppeteer/puppeteer-core.js node tools/test-route-framing.mjs
+PUPPETEER_PREFIX=/tmp/opencode/personal-site-tests node tools/test-route-framing.mjs
 ```
 
 Set `CHROME_PATH` if Chrome is not at `/usr/bin/google-chrome`, or `SITE_URL` for another preview address.

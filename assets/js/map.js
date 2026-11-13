@@ -195,8 +195,6 @@
       width: `${panel.getBoundingClientRect().width}px`,
     });
     probe.style.setProperty("--panel-height", "0px");
-    const playLabel = probe.querySelector("[data-play-label]");
-    if (playLabel) playLabel.textContent = T.play;
     panel.after(probe);
     let height = 0;
     connections.forEach((c) => {
@@ -216,12 +214,21 @@
   const next = panel.querySelector("[data-next]");
   // Two play buttons, one beside "Say hello" and one in the readout, always in the same state.
   const plays = [...document.querySelectorAll("[data-play]")];
+  // Both labels share one grid cell and only the active one is visible, so the button keeps the
+  // width of the longer label. Otherwise "Pause" is narrower than "Play the route", the hero
+  // actions re-wrap mid-scroll and the whole page below jumps.
+  plays.forEach((button) => {
+    const label = button.querySelector("[data-play-label]");
+    if (!label) return;
+    label.replaceChildren(
+      Object.assign(document.createElement("span"), { textContent: T.play, className: "play-when-off" }),
+      Object.assign(document.createElement("span"), { textContent: T.pause, className: "play-when-on" })
+    );
+  });
   const setPlaying = (on) => {
     plays.forEach((button) => {
       button.setAttribute("aria-pressed", String(on));
       button.setAttribute("aria-label", on ? T.pause : T.play);
-      const label = button.querySelector("[data-play-label]");
-      if (label) label.textContent = on ? T.pause : T.play;
       const icon = button.querySelector("[data-icon] path");
       if (icon && ICONS.play) icon.setAttribute("d", on ? ICONS.pause : ICONS.play);
     });

@@ -75,6 +75,9 @@ h1, h2, h3 { font-weight: 600; letter-spacing: var(--tracking-display); line-hei
 .control:disabled { opacity: 0.55; cursor: not-allowed; }
 .control:disabled:hover { background: transparent; }
 .control-play[aria-pressed="true"] { background: var(--color-ink); color: var(--color-paper); }
+[data-play-label] { display: inline-grid; justify-items: start; }
+[data-play-label] > span { grid-area: 1 / 1; }
+.control-play[aria-pressed="true"] .play-when-off, .control-play:not([aria-pressed="true"]) .play-when-on { visibility: hidden; }
 
 /* The map */
 .map-area { grid-area: map; min-width: 0; }

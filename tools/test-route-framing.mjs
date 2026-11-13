@@ -1,6 +1,13 @@
 import assert from "node:assert/strict";
+import { createRequire } from "node:module";
+import { pathToFileURL } from "node:url";
 
-const { default: puppeteer } = await import(process.env.PUPPETEER_MODULE || "puppeteer-core");
+// PUPPETEER_PREFIX is the folder where puppeteer-core was installed (npm install --prefix ...).
+const prefix = process.env.PUPPETEER_PREFIX;
+const entry = prefix
+  ? pathToFileURL(createRequire(`${prefix}/`).resolve("puppeteer-core")).href
+  : "puppeteer-core";
+const { default: puppeteer } = await import(entry);
 const browser = await puppeteer.launch({
   executablePath: process.env.CHROME_PATH || "/usr/bin/google-chrome",
   headless: "new",
@@ -34,6 +41,20 @@ try {
       await page.goto(new URL(path, base).href, { waitUntil: "networkidle0" });
       await page.waitForFunction(() => document.querySelectorAll(".node").length === 12);
       await wait(2200);
+      // The page route line must run down the margin, never across the readout under the map.
+      const crossing = await page.evaluate(() => {
+        const path = document.querySelector(".page-route path");
+        const panel = document.querySelector("[data-panel]").getBoundingClientRect();
+        const top = panel.top + scrollY;
+        const bottom = panel.bottom + scrollY;
+        const total = path.getTotalLength();
+        for (let l = 0; l <= total; l += 2) {
+          const p = path.getPointAtLength(l);
+          if (p.y >= top && p.y <= bottom && p.x >= panel.left - 1) return `${Math.round(p.x)},${Math.round(p.y)}`;
+        }
+        return null;
+      });
+      assert.equal(crossing, null, `${width}×${height}${path}: route line crosses the readout at ${crossing}`);
       await page.tap(".hero-copy [data-play]");
       await wait(1600);
       await page.tap(".panel [data-play]");
