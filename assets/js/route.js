@@ -63,13 +63,13 @@
     const t = page(tag.getBoundingClientRect());
     const sx = t.x + t.w / 2;
     const sy = t.y + t.h;
-    // At the top of the page nothing is drawn yet: the line starts growing from "Now" with the first scroll.
-    lead = Math.max(0, window.innerHeight * 0.72 - sy);
     const first = settled(stations[0]);
     const readout = document.querySelector("[data-panel]");
     // On a phone the readout sits under the map, so the route leaves for the edge right after "Now".
     const mapBox = page(tag.parentElement.getBoundingClientRect());
     const stacked = readout && settled(readout).x + 1 >= mapBox.x;
+    // At the top of the page nothing is drawn yet: the line starts growing from "Now" with the first scroll.
+    lead = Math.max(0, window.innerHeight * 0.72 - (stacked ? t.y + t.h / 2 : sy));
     // Otherwise it turns in the free band between the hero's lowest content and the next section.
     const heroBottom = Math.max(
       settled(readout).y + readout.offsetHeight,
@@ -89,14 +89,31 @@
       dots[i].style.setProperty("--y", `${y}px`);
     });
 
-    const r1 = Math.max(2, Math.min(r, (sx - x) / 2));
     const r2 = Math.max(2, Math.min(r, (ex - x) / 2));
+    let head;
+    if (stacked) {
+      // On a phone the readout starts right under "Now": leave from the tag's left side and drop
+      // straight down the free margin, so the line never crosses the year or the readout text.
+      const lx = t.x;
+      const ly = t.y + t.h / 2;
+      const rs = Math.max(2, Math.min(r, lx - x));
+      head = [
+        `M ${lx} ${ly}`,
+        `L ${x + rs} ${ly}`,
+        `A ${rs} ${rs} 0 0 0 ${x} ${ly + rs}`,
+      ];
+    } else {
+      const r1 = Math.max(2, Math.min(r, (sx - x) / 2));
+      head = [
+        `M ${sx} ${sy}`,
+        `L ${sx} ${turnY - r1}`,
+        `A ${r1} ${r1} 0 0 1 ${sx - r1} ${turnY}`,
+        `L ${x + r1} ${turnY}`,
+        `A ${r1} ${r1} 0 0 0 ${x} ${turnY + r1}`,
+      ];
+    }
     const d = [
-      `M ${sx} ${sy}`,
-      `L ${sx} ${turnY - r1}`,
-      `A ${r1} ${r1} 0 0 1 ${sx - r1} ${turnY}`,
-      `L ${x + r1} ${turnY}`,
-      `A ${r1} ${r1} 0 0 0 ${x} ${turnY + r1}`,
+      ...head,
       `L ${x} ${ey - r2}`,
       `A ${r2} ${r2} 0 0 0 ${x + r2} ${ey}`,
       `L ${ex} ${ey}`,
